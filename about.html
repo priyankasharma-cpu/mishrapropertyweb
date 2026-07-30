@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mishra Property Indore | Premium Real Estate</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInDown: {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        slideDown: 'slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        fadeInDown: 'fadeInDown 0.25s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animated underline effect */
+        .nav-link-underline {
+            position: relative;
+        }
+
+        .nav-link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .nav-link-underline:hover::after,
+        .nav-link-underline.active::after {
+            width: 100%;
+        }
+
+        /* Mobile menu staggered link animation */
+        .drawer-open .drawer-link {
+            animation: fadeInDown 0.4s ease forwards;
+        }
+
+        /* Hide scrollbars when drawer is open */
+        body.overflow-hidden {
+            overflow: hidden;
+        }
+
+
+        /* Hero section slide styles */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Typing Cursor Effect */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white-900 text-slate-800 antialiased min-h-screen">
+
+    <!-- HEADER / NAVBAR -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out h-[72px] sm:h-[80px] lg:h-[88px] animate-slideDown">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+
+                <!-- LEFT: LOGO -->
+                <a href="#home"
+                    class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1"
+                    aria-label="Mishra Property Indore Home">
+                    <div
+                        class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-bold text-lg lg:text-xl tracking-tight text-white transition-colors duration-300"
+                            id="logo-text">Mishra Property</span>
+                        <span
+                            class="text-[10px] tracking-widest uppercase font-semibold text-slate-300 transition-colors duration-300"
+                            id="logo-subtext">Indore • Real Estate</span>
+                    </div>
+                </a>
+
+                <!-- CENTER: DESKTOP NAVIGATION -->
+                <nav class="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
+                    <a href="#home"
+                        class="nav-link-underline active text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-home">Home</a>
+                    <a href="#about" class="nav-link-underline text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-about">About</a>
+
+                    <!-- MEGA MENU ITEM (PROPERTIES) -->
+                    <div class="relative group" id="properties-dropdown-wrapper">
+                        <button
+                            class="nav-link-underline flex items-center gap-1 text-sm font-medium transition-colors duration-200 py-1 focus:outline-none"
+                            aria-expanded="false" aria-haspopup="true">
+                            <span id="nav-properties">Properties</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+
+                        <!-- MEGA MENU DROPDOWN -->
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto">
+                            <div
+                                class="bg-white/95 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl border border-slate-100 grid grid-cols-3 gap-6 text-slate-800">
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">
+                                        Residential</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#villas"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Luxury
+                                                Villas</a></li>
+                                        <li><a href="#apartments"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Apartments</a>
+                                        </li>
+                                        <li><a href="#plots"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Residential
+                                                Plots</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">
+                                        Commercial</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#office"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Office
+                                                Space</a></li>
+                                        <li><a href="#retail"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Retail
+                                                Outlets</a></li>
+                                        <li><a href="#plots-comm"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Commercial
+                                                Plots</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">Status
+                                    </h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#ready"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Ready To
+                                                Move</a></li>
+                                        <li><a href="#under-construction"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Under
+                                                Construction</a></li>
+                                        <li><a href="#new-launches"
+                                                class="hover:text-indigo-600 transition-colors block py-1">New
+                                                Launches</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#projects"
+                        class="nav-link-underline text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-projects">Projects</a>
+                    <a href="#services"
+                        class="nav-link-underline text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-services">Services</a>
+                    <a href="#gallery"
+                        class="nav-link-underline text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-gallery">Gallery</a>
+                    <a href="#contact"
+                        class="nav-link-underline text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-contact">Contact</a>
+                </nav>
+
+                <!-- RIGHT: SEARCH & CTA -->
+                <div class="hidden lg:flex items-center space-x-6">
+
+
+
+                    <!-- PHONE NUMBER -->
+                    <a href="tel:+919876543210"
+                        class="flex items-center gap-2 text-sm font-semibold transition-colors group" id="phone-link">
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-100/10 flex items-center justify-center group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="hidden xl:inline">+91 98765 43210</span>
+                    </a>
+
+                    <!-- GRADIENT CTA BUTTON -->
+                    <a href="#visit"
+                        class="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white transition-all duration-300 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 rounded-full shadow-md shadow-indigo-500/25 hover:shadow-lg hover:shadow-indigo-500/40 hover:scale-[1.03] active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        Book Site Visit
+                    </a>
+                </div>
+
+                <!-- MOBILE HAMBURGER BUTTON -->
+                <div class="flex items-center gap-3 lg:hidden">
+                    <button id="mobile-menu-btn"
+                        class="p-2 rounded-lg text-slate-200 hover:text-white hover:bg-slate-800/50 transition-colors focus:outline-none"
+                        aria-label="Toggle Navigation Menu">
+                        <svg class="w-7 h-7 transition-transform duration-300 text-slate-200" id="hamburger-icon"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE DRAWER BACKDROP -->
+    <div id="drawer-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden"
+        aria-hidden="true"></div>
+
+    <!-- MOBILE DRAWER -->
+    <aside id="mobile-drawer"
+        class="fixed top-0 right-0 z-50 w-[320px] h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden rounded-l-3xl flex flex-col justify-between overflow-y-auto"
+        aria-label="Mobile Navigation">
+
+        <!-- DRAWER HEADER -->
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                </div>
+                <span class="font-bold text-slate-900 text-base">Mishra Property</span>
+            </div>
+            <button id="close-drawer-btn"
+                class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                aria-label="Close Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- DRAWER NAVIGATION LINKS -->
+        <div class="px-6 py-4 flex-1 space-y-1">
+            <a href="#home"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Home</a>
+            <a href="#about"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">About</a>
+            <a href="#properties"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Properties</a>
+            <a href="#projects"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Projects</a>
+            <a href="#services"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Services</a>
+            <a href="#gallery"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Gallery</a>
+            <a href="#contact"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors">Contact</a>
+        </div>
+
+        <!-- DRAWER FOOTER CTAS -->
+        <div class="p-6 bg-slate-50 border-t border-slate-100 space-y-3">
+            <a href="tel:+919876543210"
+                class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors">
+                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                    </path>
+                </svg>
+                Call Us
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl hover:bg-emerald-100 transition-colors">
+                <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+                </svg>
+                WhatsApp
+            </a>
+            <a href="#visit"
+                class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all">
+                Book Site Visit
+            </a>
+        </div>
+    </aside>
+
+    <!-- DEMO HERO SECTION FOR SCROLL TESTING -->
+    <main class="pt-20 px-1">
+        <!-- HERO SECTION -->
+        <section class="relative w-full min-h-screen overflow-hidden bg-slate-900 font-sans">
+
+            <!-- ================= FULL-SCREEN BACKGROUND SLIDER ================= -->
+            <div class="absolute inset-0">
+                <!-- SLIDE 1 -->
+                <div class="hero-slide active">
+                    <img src="pexels-house-1867187_1920.jpg" alt="Hero Slide 1" class="hero-image" />
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="hero-slide">
+                    <img src="https://www.casagrand.co.in/wp-content/uploads/2025/09/20_Casagrand_Jul25_On-Page_Are-Real-Estate-Builders-in-Chennai-Adapting-to-Modern-Housing-Society-Models_.jpg"
+                        alt="Hero Slide 2" class="hero-image" />
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="hero-slide">
+                    <img src="https://d2dy9w7mmecm6m.cloudfront.net/dy-images/blog/Luxury_Real_Estate_India_The_Nation_-_NMwe85UGHdnJ.webp"
+                        alt="Hero Slide 3" class="hero-image" />
+                </div>
+
+                <!-- LEFT GRADIENT OVERLAY (Creates the seamless light left panel blur) -->
+                <div
+                    class="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[65%] lg:w-[50%]">
+                </div>
+
+                <!-- SOFT OVERALL LIGHTENING OVERLAY -->
+                <div class="absolute inset-0 z-[1] pointer-events-none bg-white/20 backdrop-blur-[2px]"></div>
+            </div>
+
+            <!-- ================= MAIN CONTENT CONTAINER ================= -->
+            <div
+                class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 pb-16 min-h-screen flex flex-col justify-between">
+
+                <!-- TOP & HERO CONTENT GRID -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-6">
+
+                    <!-- LEFT COLUMN: TEXT CONTENT -->
+                    <div class="lg:col-span-6 xl:col-span-5 space-y-6">
+
+                        <!-- BADGE -->
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50/80 backdrop-blur-md shadow-sm">
+                            <i class="fa-solid fa-house text-blue-600 text-xs"></i>
+                            <span class="text-xs sm:text-sm font-semibold text-blue-800 tracking-wide">
+                                Trusted Real Estate Company Since 2015
+                            </span>
+                        </div>
+
+                        <!-- HEADING -->
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                            Find Your <br />
+                            <span class="text-blue-600">Dream Property</span> <br />
+                            in Indore
+                        </h1>
+
+                        <!-- SUB-HEADING & TYPING TEXT -->
+                        <div class="text-base sm:text-lg font-medium text-slate-600">
+                            Your Trusted Partner For:
+                            <span id="typing-text" class="font-bold text-blue-600 typing-cursor pl-1"></span>
+                        </div>
+
+                        <!-- DESCRIPTION -->
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
+                            Helping families and investors discover premium homes, luxury villas, commercial spaces,
+                            apartments, and residential plots across Indore with complete transparency and expert
+                            guidance.
+                        </p>
+
+                        <!-- CALL TO ACTION BUTTONS -->
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <!-- PRIMARY BUTTON -->
+                            <a href="properties.html"
+                                class="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-300">
+                                Explore Properties
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </a>
+
+                            <!-- SECONDARY BUTTON -->
+                            <a href="contact.html"
+                                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-700 bg-white/80 hover:bg-white border border-slate-200/80 backdrop-blur-md shadow-sm transition-all duration-300">
+                                How It Works
+                                <i class="fa-regular fa-circle-play text-slate-500"></i>
+                            </a>
+                        </div>
+
+                        <!-- TRUST / RATING FOOTER -->
+                        <div class="flex items-center gap-3 pt-4">
+                            <div class="flex -space-x-2 overflow-hidden">
+                                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                                    src="blob:https://gemini.google.com/61a0eb59-7ab6-48ee-8a53-806e0d7ceb36"
+                                    alt="Client">
+                                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                                    alt="Client">
+                                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+                                    alt="Client">
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium text-slate-600">
+                                Trusted by <strong class="text-slate-900 font-semibold">25,000+</strong> happy clients
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: FLOATING VILLA CARD -->
+                    <div class="lg:col-span-6 xl:col-span-7 flex justify-end relative mt-8 lg:mt-0">
+                        <div
+                            class="w-full max-w-sm bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-2xl border border-white/60 flex items-center gap-4 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=300&q=80"
+                                alt="Oceanview Villa" class="w-24 h-20 object-cover rounded-xl shadow-md">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Oceanview Villa</h4>
+                                <p class="text-xs text-slate-500">Vijay Nagar, Indore</p>
+                                <p class="text-blue-600 font-bold text-base mt-1">₹2,85,00,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= BOTTOM SEARCH BAR ================= -->
+                <div class="mt-12 bg-white/90 backdrop-blur-xl p-4 md:p-5 rounded-2xl shadow-xl border border-white/80">
+                    <form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 items-center">
+                        <!-- Location Search -->
+                        <div
+                            class="lg:col-span-2 space-y-1 border-b sm:border-b-0 sm:border-r border-slate-200 pb-2 sm:pb-0 sm:pr-3">
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Search
+                                Location</label>
+                            <div class="relative flex items-center">
+                                <input type="text" placeholder="City, Neighborhood..."
+                                    class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none placeholder-slate-400">
+                                <i class="fa-solid fa-location-dot text-slate-400 text-sm"></i>
+                            </div>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Property
+                                Type</label>
+                            <select
+                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
+                                <option>Any Type</option>
+                                <option>Luxury Villa</option>
+                                <option>Apartment</option>
+                                <option>Plot</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Price
+                                Range</label>
+                            <select
+                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
+                                <option>₹50L - ₹5Cr+</option>
+                                <option>₹20L - ₹50L</option>
+                                <option>₹50L - ₹1Cr</option>
+                            </select>
+                        </div>
+
+                        <!-- Beds & Baths -->
+                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Beds /
+                                Baths</label>
+                            <select
+                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
+                                <option>Any</option>
+                                <option>2+ BHK</option>
+                                <option>3+ BHK</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="lg:col-span-1">
+                            <button type="button"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl shadow-md shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
+                                <span>Search</span>
+                                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ================= BOTTOM FEATURES / BADGES BAR ================= -->
+                <div
+                    class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-white/60 shadow-lg">
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Verified Listings</h5>
+                            <p class="text-xs text-slate-500">All properties are checked and verified</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Best Price Guarantee</h5>
+                            <p class="text-xs text-slate-500">Get the best deals available</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Expert Support</h5>
+                            <p class="text-xs text-slate-500">Our agents are here to help you</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Easy & Secure</h5>
+                            <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const logoText = document.getElementById('logo-text');
+            const logoSubtext = document.getElementById('logo-subtext');
+            const phoneLink = document.getElementById('phone-link');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const drawerBackdrop = document.getElementById('drawer-backdrop');
+            const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+            // Select desktop navigation links
+            const navLinks = [
+                document.getElementById('nav-home'),
+                document.getElementById('nav-about'),
+                document.getElementById('nav-properties'),
+                document.getElementById('nav-projects'),
+                document.getElementById('nav-services'),
+                document.getElementById('nav-gallery'),
+                document.getElementById('nav-contact')
+            ];
+
+            // 1. SCROLL EFFECT: Transparent to White Glassmorphism
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white/90', 'backdrop-blur-xl', 'border-b', 'border-slate-100', 'shadow-sm');
+                    header.classList.remove('bg-transparent');
+
+                    // Dark text mode for clear background
+                    logoText.classList.replace('text-white', 'text-slate-900');
+                    logoSubtext.classList.replace('text-slate-300', 'text-slate-500');
+                    phoneLink.classList.replace('text-slate-100', 'text-slate-700');
+                    phoneLink.classList.add('text-slate-700');
+                    hamburgerIcon.classList.replace('text-slate-200', 'text-blue-800');
+
+                    navLinks.forEach(link => {
+                        if (link) {
+                            link.classList.remove('text-slate-100', 'hover:text-white');
+                            link.classList.add('text-slate-700', 'hover:text-indigo-600');
+                        }
+                    });
+
+                } else {
+                    header.classList.remove('bg-white/90', 'backdrop-blur-xl', 'border-b', 'border-slate-100', 'shadow-sm');
+                    header.classList.add('bg-transparent');
+
+                    // Light text mode for hero background overlay
+                    logoText.classList.replace('text-slate-900', 'text-white');
+                    logoSubtext.classList.replace('text-slate-500', 'text-slate-300');
+                    phoneLink.classList.replace('text-slate-700', 'text-slate-100');
+                    hamburgerIcon.classList.replace('text-blue-800', 'text-slate-200');
+
+                    navLinks.forEach(link => {
+                        if (link) {
+                            link.classList.remove('text-slate-700', 'hover:text-indigo-600');
+                            link.classList.add('text-slate-100', 'hover:text-white');
+                        }
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Trigger initial state check
+
+
+
+
+            // 3. MOBILE DRAWER CONTROLS
+            function openDrawer() {
+                mobileDrawer.classList.remove('translate-x-full');
+                drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeDrawer() {
+                mobileDrawer.classList.add('translate-x-full');
+                drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            mobileMenuBtn.addEventListener('click', openDrawer);
+            closeDrawerBtn.addEventListener('click', closeDrawer);
+            drawerBackdrop.addEventListener('click', closeDrawer);
+
+            // Close drawer on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeDrawer();
+            });
+
+            // Close drawer when a mobile link is clicked
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        });
+
+
+
+        // Background Slider Script
+        const slides = document.querySelectorAll(".hero-slide");
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 5000);
+
+        // Typing Text Effect (Updated with Real Estate categories)
+        const words = [
+            "Luxury Villas",
+            "Premium Apartments",
+            "Commercial Spaces",
+            "Residential Plots",
+            "Investment Deals"
+        ];
+
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+
+        const typingText = document.getElementById("typing-text");
+
+        function type() {
+            if (!typingText) return;
+
+            currentWord = words[i];
+
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, j--);
+            } else {
+                typingText.textContent = currentWord.substring(0, j++);
+            }
+
+            if (!isDeleting && j === currentWord.length + 1) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+                return;
+            }
+
+            if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+            }
+
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+
+        type();
+
+
+    </script>
+</body>
+
+</html>

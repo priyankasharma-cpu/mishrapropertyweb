@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - Real Estate</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS for background slide transition */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        /* Cursor typing animation */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 font-sans antialiased text-slate-800">
+
+    <!-- HERO SECTION -->
+    <section class="relative w-full min-h-screen bg-slate-50 pt-8 pb-16 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- MAIN HERO CONTENT GRID -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[80vh] pt-12 lg:pt-0">
+
+                <!-- LEFT CONTENT AREA -->
+                <div class="lg:col-span-6 z-10 space-y-6">
+
+                    <!-- BADGE -->
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        <span class="text-xs sm:text-sm font-semibold tracking-wide text-blue-600">
+                            🏡 Trusted Real Estate Company Since 2015
+                        </span>
+                    </div>
+
+                    <!-- HEADING -->
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                        Find Your <br />
+                        <span class="text-blue-600">Dream Property</span> <br />
+                        in Indore
+                    </h1>
+
+                    <!-- SUB HEADING & TYPING TEXT -->
+                    <div class="text-base sm:text-lg font-medium text-slate-600 flex flex-wrap items-center gap-1">
+                        <span>Your Trusted Partner For:</span>
+                        <span id="typing-text" class="font-bold text-blue-600 typing-cursor"></span>
+                    </div>
+
+                    <!-- DESCRIPTION -->
+                    <p class="text-base text-slate-500 max-w-xl leading-relaxed border-l-4 border-blue-600 pl-4">
+                        Helping families and investors discover premium homes, luxury villas, commercial spaces,
+                        apartments, and residential plots across Indore with complete transparency, verified properties,
+                        and expert real estate guidance.
+                    </p>
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <!-- PRIMARY BUTTON -->
+                        <a href="properties.html"
+                            class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 transition-all duration-300">
+                            Explore Properties
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+
+                        <!-- SECONDARY BUTTON -->
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-100 shadow-sm transition-all duration-300">
+                            <i class="fa-regular fa-circle-play text-blue-600"></i>
+                            Contact Us
+                        </a>
+                    </div>
+
+                    <!-- CLIENT AVATARS & TRUST BADGE -->
+                    <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
+                        <div class="flex -space-x-3">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Client">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Client">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Client">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Client">
+                        </div>
+                        <div class="text-sm">
+                            <p class="font-bold text-slate-800">Trusted by 25,000+ happy clients</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SLIDER & FLOATING CARD -->
+                <div class="lg:col-span-6 relative">
+
+                    <!-- SLIDER CONTAINER -->
+                    <div
+                        class="relative w-full h-[420px] sm:h-[480px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+
+                        <!-- SLIDE 1 -->
+                        <div class="hero-slide active">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200"
+                                alt="Property" class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="hero-slide">
+                            <img src="https://www.casagrand.co.in/wp-content/uploads/2025/09/20_Casagrand_Jul25_On-Page_Are-Real-Estate-Builders-in-Chennai-Adapting-to-Modern-Housing-Society-Models_.jpg"
+                                alt="Property" class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="hero-slide">
+                            <img src="https://d2dy9w7mmecm6m.cloudfront.net/dy-images/blog/Luxury_Real_Estate_India_The_Nation_-_NMwe85UGHdnJ.webp"
+                                alt="Property" class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- GRADIENT OVERLAY -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                        </div>
+
+                        <!-- FLOATING FEATURE CARD -->
+                        <div
+                            class="absolute bottom-6 right-6 left-6 sm:left-auto sm:w-80 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20 flex gap-4 items-center">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200"
+                                alt="Oceanview Villa" class="w-20 h-20 rounded-xl object-cover" />
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Oceanview Villa</h4>
+                                <p class="text-xs text-slate-500 mb-1">Malibu, California</p>
+                                <p class="text-blue-600 font-extrabold text-base">$2,850,000</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SEARCH FILTER BAR -->
+            <div class="mt-8 bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-slate-100">
+                <form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+
+                    <!-- SEARCH LOCATION -->
+                    <div
+                        class="flex flex-col gap-1 border-b sm:border-b-0 sm:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
+                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Search
+                            Location</label>
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <input type="text" placeholder="City, Neighborhood..."
+                                class="w-full bg-transparent text-sm font-medium focus:outline-none placeholder-slate-400">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- PROPERTY TYPE -->
+                    <div
+                        class="flex flex-col gap-1 border-b sm:border-b-0 lg:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
+                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Property
+                            Type</label>
+                        <select
+                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
+                            <option>Any Type</option>
+                            <option>Luxury Villas</option>
+                            <option>Premium Apartments</option>
+                            <option>Plots & Lands</option>
+                        </select>
+                    </div>
+
+                    <!-- PRICE RANGE -->
+                    <div
+                        class="flex flex-col gap-1 border-b sm:border-b-0 sm:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
+                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Price Range</label>
+                        <select
+                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
+                            <option>$0 - $5,000,000+</option>
+                            <option>$50k - $200k</option>
+                            <option>$200k - $500k</option>
+                            <option>$500k+</option>
+                        </select>
+                    </div>
+
+                    <!-- BEDS & BATHS -->
+                    <div class="flex flex-col gap-1 border-b sm:border-b-0 border-slate-100 pb-3 sm:pb-0">
+                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Beds /
+                            Baths</label>
+                        <select
+                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
+                            <option>Any Beds/Baths</option>
+                            <option>2+ Beds</option>
+                            <option>3+ Beds</option>
+                            <option>4+ Beds</option>
+                        </select>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit"
+                        class="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-all duration-300">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                        Search Homes
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- TRUST FEATURES BAR -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm">Verified Listings</h5>
+                        <p class="text-xs text-slate-500">All properties are checked and verified</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm">Best Price Guarantee</h5>
+                        <p class="text-xs text-slate-500">Get the best deals available</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm">Expert Support</h5>
+                        <p class="text-xs text-slate-500">Our agents are here to help you</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm">Easy & Secure</h5>
+                        <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS FOR SLIDER & TYPING EFFECT -->
+    <script>
+        // Image Slider Functionality
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 4000);
+
+        // Dynamic Typing Effect Functionality
+        const words = ["Luxury Villas", "Premium Apartments", "Plots & Lands", "Commercial Spaces"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 500);
+            } else {
+                setTimeout(typeEffect, isDeleting ? 50 : 100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+</body>
+
+</html>
