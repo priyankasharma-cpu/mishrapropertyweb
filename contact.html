@@ -1,339 +1,1582 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Section - Real Estate</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <title>Contact Us - Mishra Property Indore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInDown: {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    },
+                    animation: {
+                        slideDown: 'slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        fadeInDown: 'fadeInDown 0.4s ease forwards',
+                        float: 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* CSS for background slide transition */
-        .hero-slide {
+        /* Respect users who prefer reduced motion (accessibility best practice) */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .nav-link-underline {
+            position: relative;
+        }
+
+        .nav-link-underline::after {
+            content: '';
             position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
-        .hero-slide.active {
-            opacity: 1;
+        .nav-link-underline:hover::after,
+        .nav-link-underline.active::after {
+            width: 100%;
         }
 
-        /* Cursor typing animation */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 0.8s infinite;
+        .drawer-open .drawer-link {
+            animation: fadeInDown 0.4s ease forwards;
         }
 
-        @keyframes blink {
+        body.overflow-hidden {
+            overflow: hidden;
+        }
 
-            0%,
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #6366f1;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        #main-header.header-hidden {
+            transform: translateY(-100%);
+        }
+
+        /* Contact card hover lift */
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.10);
+        }
+
+        /* Form input focus glow */
+        .form-input:focus {
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+        }
+
+        /* Smooth scroll offset for anchor links (fixes fixed header overlap) */
+        html {
+            scroll-padding-top: 96px;
+        }
+
+        @media (max-width: 1024px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            html {
+                scroll-padding-top: 72px;
+            }
+        }
+
+
+
+        /* ─── Floating Gradient Blobs ─── */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, #3b82f6, #60a5fa);
+            top: -120px;
+            right: -80px;
+        }
+
+        .blob-2 {
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, #38bdf8, #22d3ee);
+            bottom: -60px;
+            left: -100px;
+        }
+
+        .blob-3 {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, #818cf8, #a5b4fc);
+            top: 40%;
+            right: -60px;
+        }
+
+        /* ─── Hero Floating Shapes ─── */
+        .float-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        .float-shape-1 {
+            width: 200px;
+            height: 200px;
+            background: #3b82f6;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .float-shape-2 {
+            width: 140px;
+            height: 140px;
+            background: #38bdf8;
+            bottom: 15%;
+            right: 8%;
+            animation-delay: 2s;
+        }
+
+        .float-shape-3 {
+            width: 100px;
+            height: 100px;
+            background: #818cf8;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
             100% {
-                opacity: 1;
+                transform: translate(30px, -30px) scale(1.08);
+            }
+        }
+
+
+        /* ─── Fade Up Animation ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── Responsive tweaks ─── */
+        @media (max-width: 640px) {
+            .blob-1 {
+                width: 220px;
+                height: 220px;
+                top: -60px;
+                right: -40px;
             }
 
-            50% {
-                opacity: 0;
+            .blob-2 {
+                width: 180px;
+                height: 180px;
+                bottom: -30px;
+                left: -50px;
             }
+
+            .blob-3 {
+                width: 140px;
+                height: 140px;
+                top: 30%;
+                right: -30px;
+            }
+
+            .float-shape-1,
+            .float-shape-2,
+            .float-shape-3 {
+                display: none;
+            }
+        }
+
+
+        * ─── FAQ Accordion ─── */ .faq-question {
+            cursor: pointer;
+            transition: background 0.25s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.35s ease;
+        }
+
+        .faq-icon.rotated {
+            transform: rotate(180deg);
         }
     </style>
 </head>
 
-<body class="bg-slate-50 font-sans antialiased text-slate-800">
+<body class="bg-white text-slate-800 antialiased min-h-screen">
 
-    <!-- HERO SECTION -->
-    <section class="relative w-full min-h-screen bg-slate-50 pt-8 pb-16 overflow-hidden">
+    <!-- ============================================================
+    HEADER / NAVBAR (unchanged, kept exactly as original)
+    ============================================================ -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out h-[72px] sm:h-[80px] lg:h-[88px] animate-slideDown bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <!-- MAIN HERO CONTENT GRID -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[80vh] pt-12 lg:pt-0">
-
-                <!-- LEFT CONTENT AREA -->
-                <div class="lg:col-span-6 z-10 space-y-6">
-
-                    <!-- BADGE -->
+                <!-- LEFT: LOGO -->
+                <a href="#home"
+                    class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1"
+                    aria-label="Mishra Property Indore Home">
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                        <span class="text-xs sm:text-sm font-semibold tracking-wide text-blue-600">
-                            🏡 Trusted Real Estate Company Since 2015
-                        </span>
+                        class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
                     </div>
-
-                    <!-- HEADING -->
-                    <h1
-                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-                        Find Your <br />
-                        <span class="text-blue-600">Dream Property</span> <br />
-                        in Indore
-                    </h1>
-
-                    <!-- SUB HEADING & TYPING TEXT -->
-                    <div class="text-base sm:text-lg font-medium text-slate-600 flex flex-wrap items-center gap-1">
-                        <span>Your Trusted Partner For:</span>
-                        <span id="typing-text" class="font-bold text-blue-600 typing-cursor"></span>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-bold text-lg lg:text-xl tracking-tight text-slate-900 transition-colors duration-300"
+                            id="logo-text">Mishra Property</span>
+                        <span
+                            class="text-[10px] tracking-widest uppercase font-semibold text-slate-500 transition-colors duration-300"
+                            id="logo-subtext">Indore • Real Estate</span>
                     </div>
+                </a>
 
-                    <!-- DESCRIPTION -->
-                    <p class="text-base text-slate-500 max-w-xl leading-relaxed border-l-4 border-blue-600 pl-4">
-                        Helping families and investors discover premium homes, luxury villas, commercial spaces,
-                        apartments, and residential plots across Indore with complete transparency, verified properties,
-                        and expert real estate guidance.
-                    </p>
+                <!-- CENTER: DESKTOP NAVIGATION -->
+                <nav class="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
+                    <a href="#home"
+                        class="nav-link-underline active text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-home">Home</a>
+                    <a href="about.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-about">About</a>
 
-                    <!-- ACTION BUTTONS -->
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <!-- PRIMARY BUTTON -->
-                        <a href="properties.html"
-                            class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 transition-all duration-300">
-                            Explore Properties
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
+                    <!-- MEGA MENU ITEM (PROPERTIES) -->
+                    <div class="relative group" id="properties-dropdown-wrapper">
+                        <button
+                            class="nav-link-underline text-slate-700 hover:text-indigo-600 flex items-center gap-1 text-sm font-medium transition-colors duration-200 py-1 focus:outline-none"
+                            id="properties-dropdown-btn" aria-expanded="false" aria-haspopup="true"
+                            aria-controls="properties-mega-menu">
+                            <span id="nav-properties">Properties</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
 
-                        <!-- SECONDARY BUTTON -->
-                        <a href="contact.html"
-                            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-100 shadow-sm transition-all duration-300">
-                            <i class="fa-regular fa-circle-play text-blue-600"></i>
-                            Contact Us
-                        </a>
-                    </div>
-
-                    <!-- CLIENT AVATARS & TRUST BADGE -->
-                    <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
-                        <div class="flex -space-x-3">
-                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Client">
-                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Client">
-                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Client">
-                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Client">
+                        <!-- MEGA MENU DROPDOWN -->
+                        <div id="properties-mega-menu"
+                            class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto">
+                            <div
+                                class="bg-white/95 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl border border-slate-100 grid grid-cols-3 gap-6 text-slate-800">
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">
+                                        Residential</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#villas"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Luxury
+                                                Villas</a></li>
+                                        <li><a href="#apartments"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Apartments</a>
+                                        </li>
+                                        <li><a href="#plots"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Residential
+                                                Plots</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">
+                                        Commercial</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#office"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Office
+                                                Space</a></li>
+                                        <li><a href="#retail"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Retail
+                                                Outlets</a></li>
+                                        <li><a href="#plots-comm"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Commercial
+                                                Plots</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">Status
+                                    </h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li><a href="#ready"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Ready To
+                                                Move</a></li>
+                                        <li><a href="#under-construction"
+                                                class="hover:text-indigo-600 transition-colors block py-1">Under
+                                                Construction</a></li>
+                                        <li><a href="#new-launches"
+                                                class="hover:text-indigo-600 transition-colors block py-1">New
+                                                Launches</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-sm">
-                            <p class="font-bold text-slate-800">Trusted by 25,000+ happy clients</p>
-                        </div>
                     </div>
 
+                    <a href="projects.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-projects">Projects</a>
+                    <a href="services.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-services">Services</a>
+                    <a href="gallery.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-gallery">Gallery</a>
+                    <a href="contact.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium transition-colors duration-200 py-1"
+                        id="nav-contact">Contact</a>
+                </nav>
+
+                <!-- RIGHT: PHONE & CTA -->
+                <div class="hidden lg:flex items-center space-x-6">
+
+                    <!-- PHONE NUMBER -->
+                    <a href="tel:+919876543210"
+                        class="flex items-center gap-2 text-sm font-semibold transition-colors group text-slate-700"
+                        id="phone-link" aria-label="Call us at +91 98765 43210">
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-100/10 flex items-center justify-center group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="hidden xl:inline">+91 98765 43210</span>
+                    </a>
+
+                    <!-- GRADIENT CTA BUTTON -->
+                    <a href="#visit"
+                        class="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white transition-all duration-300 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 rounded-full shadow-md shadow-indigo-500/25 hover:shadow-lg hover:shadow-indigo-500/40 hover:scale-[1.03] active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        Book Site Visit
+                    </a>
                 </div>
 
-                <!-- RIGHT SLIDER & FLOATING CARD -->
-                <div class="lg:col-span-6 relative">
+                <!-- MOBILE HAMBURGER BUTTON -->
+                <div class="flex items-center gap-3 lg:hidden">
+                    <button id="mobile-menu-btn" type="button"
+                        class="p-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors focus:outline-none"
+                        aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+                        <svg class="w-7 h-7 transition-transform duration-300 text-slate-700" id="hamburger-icon"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
 
-                    <!-- SLIDER CONTAINER -->
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE DRAWER BACKDROP -->
+    <div id="drawer-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden"
+        aria-hidden="true"></div>
+
+    <!-- MOBILE DRAWER -->
+    <aside id="mobile-drawer"
+        class="fixed top-0 right-0 z-50 w-[320px] max-w-[85vw] h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden rounded-l-3xl flex flex-col justify-between overflow-y-auto"
+        aria-label="Mobile Navigation" aria-hidden="true">
+
+        <!-- DRAWER HEADER -->
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                </div>
+                <span class="font-bold text-slate-900 text-base">Mishra Property</span>
+            </div>
+            <button id="close-drawer-btn" type="button"
+                class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                aria-label="Close Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- DRAWER NAVIGATION LINKS -->
+        <div class="px-6 py-4 flex-1 space-y-1">
+            <a href="#home"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Home</a>
+            <a href="about.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">About</a>
+            <a href="properties.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Properties</a>
+            <a href="projects.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Projects</a>
+            <a href="services.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Services</a>
+            <a href="gallery.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors border-b border-slate-50">Gallery</a>
+            <a href="contact.html"
+                class="drawer-link block py-3 text-slate-700 font-medium hover:text-indigo-600 transition-colors">Contact</a>
+        </div>
+
+        <!-- DRAWER FOOTER CTAS -->
+        <div class="p-6 bg-slate-50 border-t border-slate-100 space-y-3">
+            <a href="tel:+919876543210"
+                class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors">
+                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                    </path>
+                </svg>
+                Call Us
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl hover:bg-emerald-100 transition-colors">
+                <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+                </svg>
+                WhatsApp
+            </a>
+            <a href="contact.html"
+                class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all">
+                Book Site Visit
+            </a>
+        </div>
+    </aside>
+
+    <!-- Floating Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Floating Shapes -->
+    <div class="float-shape float-shape-1"></div>
+    <div class="float-shape float-shape-2"></div>
+    <div class="float-shape float-shape-3"></div>
+    <!------------------------MAIN CONTENT-------------------------- -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10 pt-[100px] sm:pt-[100px] lg:pt-[130px]">
+
+        <!-- Premium Contact Header -->
+        <div class="relative text-center mb-16 overflow-hidden">
+
+            <!-- Background Glow Effects -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-indigo-500/20 blur-3xl rounded-full">
+            </div>
+            <div class="absolute top-10 right-10 w-48 h-48 bg-violet-500/20 blur-3xl rounded-full">
+            </div>
+
+            <!-- Badge -->
+            <div
+                class="relative inline-flex items-center gap-2 px-5 py-2 rounded-full border border-indigo-200 bg-white/80 backdrop-blur-md shadow-sm mb-6">
+                <i class="fa-regular fa-message text-blue-600"></i>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
+                    Get In Touch
+                </span>
+            </div>
+
+            <!-- Heading -->
+            <h1
+                class="relative text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                Let's Connect &
+                <br>
+                <span class="bg-gradient-to-r from-blue-600 via-sky-500 to-blue-500 bg-clip-text text-transparent">
+                    Build Your Dream
+                </span>
+            </h1>
+
+            <!-- Decorative Line -->
+            <div class="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mx-auto mt-6">
+            </div>
+
+            <!-- Description -->
+            <p class="mt-5 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Have questions about buying, selling, or investing?
+                Our expert team is ready to help you every step of the way.
+            </p>
+
+            <!-- Stats -->
+            <div class="mt-10 flex flex-wrap justify-center gap-8 text-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900">500+</h3>
+                    <p class="text-slate-500 text-sm">Properties Listed</p>
+                </div>
+
+                <div class="hidden sm:block w-px bg-slate-200"></div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900">1000+</h3>
+                    <p class="text-slate-500 text-sm">Happy Clients</p>
+                </div>
+
+                <div class="hidden sm:block w-px bg-slate-200"></div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900">10+</h3>
+                    <p class="text-slate-500 text-sm">Years Experience</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Grid: Contact Info Sidebar + Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+
+            <!----------------- LEFT: CONTACT INFO SIDEBAR (Pastel Cards)---------- -->
+            <div class="lg:col-span-5 space-y-5">
+
+                <!-- Main contact card -->
+                <div
+                    class="bg-white/80 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/60 relative overflow-hidden contact-card">
+                    <!-- subtle accent -->
                     <div
-                        class="relative w-full h-[420px] sm:h-[480px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-indigo-50/60 blur-2xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-violet-50/40 blur-2xl pointer-events-none">
+                    </div>
 
-                        <!-- SLIDE 1 -->
-                        <div class="hero-slide active">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200"
-                                alt="Property" class="w-full h-full object-cover" />
-                        </div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 relative z-10">
+                        <i class="fa-regular fa-address-card text-indigo-600 mr-2"></i>Contact Info
+                    </h2>
 
-                        <!-- SLIDE 2 -->
-                        <div class="hero-slide">
-                            <img src="https://www.casagrand.co.in/wp-content/uploads/2025/09/20_Casagrand_Jul25_On-Page_Are-Real-Estate-Builders-in-Chennai-Adapting-to-Modern-Housing-Society-Models_.jpg"
-                                alt="Property" class="w-full h-full object-cover" />
-                        </div>
+                    <div class="space-y-5 relative z-10">
 
-                        <!-- SLIDE 3 -->
-                        <div class="hero-slide">
-                            <img src="https://d2dy9w7mmecm6m.cloudfront.net/dy-images/blog/Luxury_Real_Estate_India_The_Nation_-_NMwe85UGHdnJ.webp"
-                                alt="Property" class="w-full h-full object-cover" />
-                        </div>
-
-                        <!-- GRADIENT OVERLAY -->
+                        <!-- Office Address -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
-                        </div>
-
-                        <!-- FLOATING FEATURE CARD -->
-                        <div
-                            class="absolute bottom-6 right-6 left-6 sm:left-auto sm:w-80 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20 flex gap-4 items-center">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200"
-                                alt="Oceanview Villa" class="w-20 h-20 rounded-xl object-cover" />
+                            class="flex items-start gap-4 p-3 rounded-2xl bg-blue-50/70 border border-blue-100/60 transition-all hover:bg-blue-50/90">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 border border-blue-200/60 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Oceanview Villa</h4>
-                                <p class="text-xs text-slate-500 mb-1">Malibu, California</p>
-                                <p class="text-blue-600 font-extrabold text-base">$2,850,000</p>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Office Address
+                                </h3>
+                                <p class="text-slate-800 font-semibold mt-0.5 text-sm sm:text-base">AB Road, Near Vijay
+                                    Nagar Square, Indore, MP - 452010</p>
                             </div>
                         </div>
 
-                    </div>
+                        <!-- Phone -->
+                        <div
+                            class="flex items-start gap-4 p-3 rounded-2xl bg-emerald-50/70 border border-emerald-100/60 transition-all hover:bg-emerald-50/90">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 border border-emerald-200/60 flex items-center justify-center text-emerald-600 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Call / Mobile</h3>
+                                <p class="text-slate-800 font-semibold mt-0.5 text-sm sm:text-base">+91 98765 43210</p>
+                                <p class="text-slate-500 text-sm">+91 731 1234567</p>
+                            </div>
+                        </div>
 
-                </div>
+                        <!-- Email -->
+                        <div
+                            class="flex items-start gap-4 p-3 rounded-2xl bg-violet-50/70 border border-violet-100/60 transition-all hover:bg-violet-50/90">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200/60 flex items-center justify-center text-violet-600 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Email Us</h3>
+                                <p class="text-slate-800 font-semibold mt-0.5 text-sm sm:text-base break-all">
+                                    info@mishrapropertyindore.com</p>
+                            </div>
+                        </div>
 
-            </div>
-
-            <!-- SEARCH FILTER BAR -->
-            <div class="mt-8 bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-slate-100">
-                <form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
-
-                    <!-- SEARCH LOCATION -->
-                    <div
-                        class="flex flex-col gap-1 border-b sm:border-b-0 sm:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
-                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Search
-                            Location</label>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <input type="text" placeholder="City, Neighborhood..."
-                                class="w-full bg-transparent text-sm font-medium focus:outline-none placeholder-slate-400">
-                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                        <!-- Hours -->
+                        <div
+                            class="flex items-start gap-4 p-3 rounded-2xl bg-amber-50/70 border border-amber-100/60 transition-all hover:bg-amber-50/90">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 border border-amber-200/60 flex items-center justify-center text-amber-600 shrink-0 shadow-sm">
+                                <i class="fa-regular fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Working Hours</h3>
+                                <p class="text-slate-800 font-semibold mt-0.5 text-sm sm:text-base">Mon–Sat, 9AM – 7PM
+                                </p>
+                                <p class="text-slate-500 text-sm">Sunday Closed</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- PROPERTY TYPE -->
-                    <div
-                        class="flex flex-col gap-1 border-b sm:border-b-0 lg:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
-                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Property
-                            Type</label>
-                        <select
-                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
-                            <option>Any Type</option>
-                            <option>Luxury Villas</option>
-                            <option>Premium Apartments</option>
-                            <option>Plots & Lands</option>
-                        </select>
+                    <!-- Direct WhatsApp Button -->
+                    <div class="mt-7 pt-6 border-t border-slate-100 relative z-10">
+                        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                            class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-3.5 px-6 rounded-2xl transition duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 group">
+                            <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                            Chat on WhatsApp
+                        </a>
                     </div>
+                </div>
 
-                    <!-- PRICE RANGE -->
-                    <div
-                        class="flex flex-col gap-1 border-b sm:border-b-0 sm:border-r border-slate-100 pb-3 sm:pb-0 sm:pr-4">
-                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Price Range</label>
-                        <select
-                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
-                            <option>$0 - $5,000,000+</option>
-                            <option>$50k - $200k</option>
-                            <option>$200k - $500k</option>
-                            <option>$500k+</option>
-                        </select>
-                    </div>
-
-                    <!-- BEDS & BATHS -->
-                    <div class="flex flex-col gap-1 border-b sm:border-b-0 border-slate-100 pb-3 sm:pb-0">
-                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Beds /
-                            Baths</label>
-                        <select
-                            class="w-full bg-transparent text-sm font-medium text-slate-700 focus:outline-none cursor-pointer">
-                            <option>Any Beds/Baths</option>
-                            <option>2+ Beds</option>
-                            <option>3+ Beds</option>
-                            <option>4+ Beds</option>
-                        </select>
-                    </div>
-
-                    <!-- SUBMIT BUTTON -->
-                    <button type="submit"
-                        class="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-all duration-300">
-                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                        Search Homes
-                    </button>
-
-                </form>
             </div>
 
-            <!-- TRUST FEATURES BAR -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <!-----------------RIGHT: FORM SECTION --------------------->
+            <div class="lg:col-span-7">
+                <div
+                    class="bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/60 contact-card">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-1 flex items-center gap-2">
+                        <i class="fa-regular fa-pen-to-square text-blue-600"></i>
+                        Send Us a Message
+                    </h2>
+                    <p class="text-slate-500 mb-7 text-sm">We'll get back to you within 24 hours</p>
+                    <!-- Alert Box -->
+                    <div id="formAlert" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
 
-                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
-                        <i class="fa-solid fa-shield-halved"></i>
+                    <form id="contactForm" class="space-y-5">
+
+                        <!-- Row: Name + Phone -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                    <i class="fa-regular fa-user text-slate-400 mr-1.5"></i>Full Name <span
+                                        class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="fullName" required placeholder="Rahul Sharma"
+                                    class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:bg-white transition duration-200">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                    <i class="fa-solid fa-phone text-slate-400 mr-1.5"></i>Phone Number <span
+                                        class="text-red-500">*</span>
+                                </label>
+                                <input type="tel" id="phone" required placeholder="+91 98765 00000"
+                                    class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:bg-white transition duration-200">
+                            </div>
+                        </div>
+
+                        <!-- Row: Email + Property Type -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                    <i class="fa-regular fa-envelope text-slate-400 mr-1.5"></i>Email Address
+                                </label>
+                                <input type="email" id="email" placeholder="rahul@example.com"
+                                    class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:bg-white transition duration-200">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                    <i class="fa-regular fa-building text-slate-400 mr-1.5"></i>Property Interest
+                                </label>
+                                <select id="propertyType"
+                                    class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-blue-400 focus:bg-white transition duration-200 appearance-none">
+                                    <option value="Residential Plot">🏡 Residential Plot</option>
+                                    <option value="Luxury Villa">🏰 Luxury Villa</option>
+                                    <option value="Apartment / Flat">🏢 Apartment / Flat</option>
+                                    <option value="Commercial Space">🏬 Commercial Space</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                <i class="fa-regular fa-comment text-slate-400 mr-1.5"></i>Your Requirement / Message
+                            </label>
+                            <textarea id="message" rows="4"
+                                placeholder="Mujhe Vijay Nagar me 3 BHK flat ki requirement hai..."
+                                class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:bg-white transition duration-200 resize-y"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl transition duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 flex items-center justify-center gap-2 group">
+                            <span>Send Message</span>
+                            <i
+                                class="fa-solid fa-paper-plane text-sm group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </button>
+
+                        <p class="text-xs text-slate-400 text-center mt-1">
+                            <i class="fa-regular fa-lock mr-1"></i> Your information is safe with us.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!--------GOOGLE MAP SECTION (clean & light)------->
+        <div
+            class="mt-16 bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 h-80 sm:h-96 relative">
+            <div class="absolute inset-0 flex items-center justify-center bg-slate-100/50 pointer-events-none z-0">
+                <span class="text-slate-300 text-sm font-medium"><i class="fa-regular fa-map mr-2"></i>Loading
+                    map…</span>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58884.28286903333!2d75.85772645!3d22.7195687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                class="w-full h-full border-0 relative z-10" allowfullscreen="" loading="lazy"
+                title="Mishra Property Indore Location Map">
+            </iframe>
+        </div>
+
+
+        <!-- FEATURED PROJECTS SECTION START -->
+        <section class="py-20 bg-slate-900 text-white min-h-screen relative overflow-hidden font-sans">
+
+            <!-- Decorative Background Glows -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-3">
+                        Exclusive Developments
+                    </span>
+                    <h2
+                        class="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                        Our Featured Projects
+                    </h2>
+                    <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                        Explore premium residential townships and prime plots crafted for modern living and high
+                        returns.
+                    </p>
+                </div>
+
+                <!-- Search & Filter Controls -->
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-10">
+
+                    <!-- Filter Tabs -->
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-start" id="projectFilters">
+                        <button onclick="filterProjects('all')"
+                            class="filter-btn active-tab px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border bg-amber-500 text-slate-950 border-amber-500 shadow-lg shadow-amber-500/20">
+                            All Projects
+                        </button>
+                        <button onclick="filterProjects('new')"
+                            class="filter-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border bg-slate-800/80 text-slate-300 border-slate-700/60 hover:bg-slate-700/50">
+                            New Launch 🔥
+                        </button>
+                        <button onclick="filterProjects('ab-road')"
+                            class="filter-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border bg-slate-800/80 text-slate-300 border-slate-700/60 hover:bg-slate-700/50">
+                            AB Road Mangliya📍
+                        </button>
+                        <button onclick="filterProjects('large')"
+                            class="filter-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border bg-slate-800/80 text-slate-300 border-slate-700/60 hover:bg-slate-700/50">
+                            Large Plots (>3300 sqft)
+                        </button>
                     </div>
-                    <div>
-                        <h5 class="font-bold text-slate-800 text-sm">Verified Listings</h5>
-                        <p class="text-xs text-slate-500">All properties are checked and verified</p>
+
+                    <!-- Live Search Box -->
+                    <div class="relative w-full md:w-72">
+                        <input type="text" id="projectSearch" placeholder="Search projects..."
+                            onkeyup="searchProjects()"
+                            class="w-full bg-slate-800/80 border border-slate-700/70 text-slate-200 text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-500">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
-                        <i class="fa-solid fa-tag"></i>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-slate-800 text-sm">Best Price Guarantee</h5>
-                        <p class="text-xs text-slate-500">Get the best deals available</p>
-                    </div>
+                <!-- Projects Grid Container -->
+                <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Project cards will render here dynamically via Javascript -->
                 </div>
 
-                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-slate-800 text-sm">Expert Support</h5>
-                        <p class="text-xs text-slate-500">Our agents are here to help you</p>
-                    </div>
-                </div>
+            </div>
 
-                <div class="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-slate-100 shadow-sm">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl shrink-0">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-slate-800 text-sm">Easy & Secure</h5>
-                        <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
-                    </div>
-                </div>
+            <!-- Inquiry Modal -->
+            <div id="inquiryModal"
+                class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+                        ✕
+                    </button>
+                    <h3 class="text-xl font-bold text-white mb-1" id="modalProjectTitle">Project Name</h3>
+                    <p class="text-sm text-slate-400 mb-6">Request full pricing details and floor plan.</p>
 
+                    <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Your
+                                Name</label>
+                            <input type="text" required placeholder="John Doe"
+                                class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Phone
+                                Number</label>
+                            <input type="tel" required placeholder="+91 98765 43210"
+                                class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-amber-500">
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold py-2.5 rounded-lg text-sm transition-colors mt-2">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- JavaScript Logic -->
+            <script>
+                // Project Data Array
+                const projects = [
+                    {
+                        id: 1,
+                        name: "Highway Blossom",
+                        size: "3,300 sqft",
+                        sizeValue: 3300,
+                        location: "AB Road Mangliya",
+                        badge: "Premium",
+                        category: "ab-road large",
+                        bgGradient: "from-amber-500/20 to-orange-500/5",
+                        accentColor: "border-amber-500/30"
+                    },
+                    {
+                        id: 2,
+                        name: "Highway Serene City 2",
+                        size: "3,400 sqft",
+                        sizeValue: 3400,
+                        location: "AB Road Mangliya",
+                        badge: "Popular",
+                        category: "ab-road large",
+                        bgGradient: "from-blue-500/20 to-cyan-500/5",
+                        accentColor: "border-blue-500/30"
+                    },
+                    {
+                        id: 3,
+                        name: "Highway Oasis",
+                        size: "3,775 sqft",
+                        sizeValue: 3775,
+                        location: "Prime Location",
+                        badge: "Luxury Plots",
+                        category: "large",
+                        bgGradient: "from-emerald-500/20 to-teal-500/5",
+                        accentColor: "border-emerald-500/30"
+                    },
+                    {
+                        id: 4,
+                        name: "Highway Landmark",
+                        size: "2,975 sqft",
+                        sizeValue: 2975,
+                        location: "Prime Location",
+                        badge: "Hot Deal",
+                        category: "standard",
+                        bgGradient: "from-purple-500/20 to-indigo-500/5",
+                        accentColor: "border-purple-500/30"
+                    },
+                    {
+                        id: 5,
+                        name: "Highway Avenue",
+                        size: "4,400 sqft",
+                        sizeValue: 4400,
+                        location: "Prime Location",
+                        badge: "Grand Layout",
+                        category: "large",
+                        bgGradient: "from-rose-500/20 to-pink-500/5",
+                        accentColor: "border-rose-500/30"
+                    },
+                    {
+                        id: 6,
+                        name: "Highway Trident",
+                        size: "2,650 sqft",
+                        sizeValue: 2650,
+                        location: "New Launching Colony",
+                        badge: "New Launch 🔥",
+                        category: "new standard",
+                        bgGradient: "from-amber-500/30 to-amber-600/10",
+                        accentColor: "border-amber-500"
+                    },
+                    {
+                        id: 7,
+                        name: "Highway Season",
+                        size: "2,699 sqft",
+                        sizeValue: 2699,
+                        location: "Prime Location",
+                        badge: "Featured",
+                        category: "standard",
+                        bgGradient: "from-sky-500/20 to-blue-500/5",
+                        accentColor: "border-sky-500/30"
+                    },
+                    {
+                        id: 8,
+                        name: "Highway Aura",
+                        size: "3,400 sqft",
+                        sizeValue: 3400,
+                        location: "Prime Location",
+                        badge: "Exclusive",
+                        category: "large",
+                        bgGradient: "from-teal-500/20 to-emerald-500/5",
+                        accentColor: "border-teal-500/30"
+                    }
+                ];
+
+                let currentFilter = 'all';
+
+                // Render Cards Function
+                function renderProjects(items) {
+                    const grid = document.getElementById('projectsGrid');
+                    grid.innerHTML = '';
+
+                    if (items.length === 0) {
+                        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-500">
+            No projects found matching your search criteria.
+          </div>
+        `;
+                        return;
+                    }
+
+                    items.forEach(p => {
+                        const card = document.createElement('div');
+                        card.className = `group relative bg-slate-800/40 border ${p.accentColor} rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800/70 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between overflow-hidden backdrop-blur-sm`;
+
+                        card.innerHTML = `
+          <!-- Background Subtle Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-br ${p.bgGradient} opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <!-- Card Header Badge & Icon -->
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-900/80 text-amber-400 border border-amber-500/20">
+                ${p.badge}
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-900/60 flex items-center justify-center text-amber-400 border border-slate-700/50 group-hover:scale-110 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h5"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Project Title -->
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+              ${p.name}
+            </h3>
+
+            <!-- Location -->
+            <div class="flex items-center text-xs text-slate-400 mb-6">
+              <svg class="w-3.5 h-3.5 mr-1 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>${p.location}</span>
+            </div>
+
+            <!-- Key Features / Dimensions Box -->
+            <div class="bg-slate-900/80 rounded-xl p-3 border border-slate-700/50 mb-6 grid grid-cols-2 gap-2 text-center">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium">Plot Size</span>
+                <span class="text-sm font-semibold text-slate-200">${p.size}</span>
+              </div>
+              <div class="border-l border-slate-800">
+                <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium">Status</span>
+                <span class="text-sm font-semibold text-emerald-400">Available</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="relative z-10 pt-2">
+            <button 
+              onclick="openModal('${p.name}')" 
+              class="w-full py-2.5 px-4 rounded-xl bg-slate-900/90 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-medium text-xs tracking-wide uppercase transition-all duration-300 border border-slate-700/80 hover:border-amber-500 flex items-center justify-center gap-2 group/btn"
+            >
+              <span>Get Rate & Details</span>
+              <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        `;
+                        grid.appendChild(card);
+                    });
+                }
+
+                // Filter Handler
+                function filterProjects(type) {
+                    currentFilter = type;
+
+                    // Update Filter Button Styles
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-500', 'shadow-lg', 'shadow-amber-500/20');
+                        btn.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700/60');
+                    });
+
+                    event.currentTarget.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700/60');
+                    event.currentTarget.classList.add('bg-amber-500', 'text-slate-950', 'border-amber-500', 'shadow-lg', 'shadow-amber-500/20');
+
+                    applyFilters();
+                }
+
+                // Search Handler
+                function searchProjects() {
+                    applyFilters();
+                }
+
+                // Filter + Search Logic Combined
+                function applyFilters() {
+                    const query = document.getElementById('projectSearch').value.toLowerCase();
+
+                    const filtered = projects.filter(p => {
+                        const matchesCategory =
+                            currentFilter === 'all' ||
+                            p.category.includes(currentFilter);
+
+                        const matchesQuery =
+                            p.name.toLowerCase().includes(query) ||
+                            p.location.toLowerCase().includes(query) ||
+                            p.size.toLowerCase().includes(query);
+
+                        return matchesCategory && matchesQuery;
+                    });
+
+                    renderProjects(filtered);
+                }
+
+                // Modal Control Functions
+                function openModal(projectName) {
+                    document.getElementById('modalProjectTitle').innerText = projectName;
+                    const modal = document.getElementById('inquiryModal');
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                }
+
+                function closeModal() {
+                    const modal = document.getElementById('inquiryModal');
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                }
+
+                function handleInquirySubmit(e) {
+                    e.preventDefault();
+                    alert('Thank you! Our representative will send you the price list shortly.');
+                    closeModal();
+                }
+
+                // Initialize on load
+                document.addEventListener('DOMContentLoaded', () => {
+                    renderProjects(projects);
+                });
+            </script>
+
+        </section>
+        <!-- FEATURED PROJECTS SECTION END -->
+
+
+
+    </main>
+
+
+    <!-- ============================================================
+FAQ ACCORDION
+============================================================ -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="text-center mb-10">
+            <span class="inline-block text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full mb-3">
+                <i class="fa-regular fa-circle-question mr-1.5"></i> FAQ
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
+            <p class="text-slate-500 mt-2">Everything you need to know about working with us</p>
+        </div>
+
+        <div class="space-y-4" id="faqContainer">
+
+            <!-- FAQ 1 -->
+            <div
+                class="glass-card rounded-2xl border border-white/50 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div class="faq-question flex items-center justify-between p-5 md:p-6" data-target="faq1">
+                    <span class="font-semibold text-slate-800 text-base md:text-lg flex items-center gap-3">
+                        <span
+                            class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold">1</span>
+                        How do I schedule a property visit?
+                    </span>
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+                </div>
+                <div id="faq1" class="faq-answer text-slate-600 text-sm md:text-base leading-relaxed">
+                    You can schedule a visit by filling out the contact form above, or by calling us directly at
+                    <strong>+91 98765 43210</strong>. Our team will coordinate with you to find a convenient time.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div
+                class="glass-card rounded-2xl border border-white/50 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div class="faq-question flex items-center justify-between p-5 md:p-6" data-target="faq2">
+                    <span class="font-semibold text-slate-800 text-base md:text-lg flex items-center gap-3">
+                        <span
+                            class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold">2</span>
+                        Do you charge brokerage?
+                    </span>
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+                </div>
+                <div id="faq2" class="faq-answer text-slate-600 text-sm md:text-base leading-relaxed">
+                    Yes, we charge a standard brokerage fee of <strong>1% – 2%</strong> of the property value, which is
+                    fully transparent and discussed upfront. We believe in complete clarity with our clients.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div
+                class="glass-card rounded-2xl border border-white/50 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div class="faq-question flex items-center justify-between p-5 md:p-6" data-target="faq3">
+                    <span class="font-semibold text-slate-800 text-base md:text-lg flex items-center gap-3">
+                        <span
+                            class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold">3</span>
+                        Can I get home loan assistance?
+                    </span>
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+                </div>
+                <div id="faq3" class="faq-answer text-slate-600 text-sm md:text-base leading-relaxed">
+                    Absolutely! We have partnered with leading banks and financial institutions to offer <strong>home
+                        loan assistance</strong> at competitive interest rates. Our experts will guide you through the
+                    entire process.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div
+                class="glass-card rounded-2xl border border-white/50 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div class="faq-question flex items-center justify-between p-5 md:p-6" data-target="faq4">
+                    <span class="font-semibold text-slate-800 text-base md:text-lg flex items-center gap-3">
+                        <span
+                            class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold">4</span>
+                        Do you deal in commercial properties?
+                    </span>
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+                </div>
+                <div id="faq4" class="faq-answer text-slate-600 text-sm md:text-base leading-relaxed">
+                    Yes, we specialize in both <strong>residential and commercial</strong> properties. From office
+                    spaces to retail outlets, we have a wide portfolio to match your business needs.
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- JS FOR SLIDER & TYPING EFFECT -->
+
+
+    <!-------FOOTER-------->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-12 pb-6 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center text-white text-lg font-bold shadow-lg shadow-blue-500/25">
+                            MP
+                        </div>
+                        <span class="text-xl font-bold text-white">Mishra<span
+                                class="text-blue-400">Property</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
+                        Premium real estate services in Indore & beyond. Helping you find the perfect home or
+                        investment.
+                    </p>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" aria-label="Facebook"
+                            class="w-9 h-9 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram"
+                            class="w-9 h-9 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube"
+                            class="w-9 h-9 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="font-semibold text-white mb-4">Quick Links</h5>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Properties</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Testimonials</a>
+                        </li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h5 class="font-semibold text-white mb-4">Services</h5>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Buy Property</a>
+                        </li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Sell Property</a>
+                        </li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Rent Property</a>
+                        </li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Home Loan
+                                Assistance</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Property
+                                Valuation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="font-semibold text-white mb-4">Get in Touch</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="fa-solid fa-location-dot text-blue-400 mt-0.5 w-4 text-center"></i>
+                            Vijay Nagar, Indore, MP
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="fa-solid fa-phone text-blue-400 mt-0.5 w-4 text-center"></i>
+                            +91 98765 43210
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="fa-regular fa-envelope text-blue-400 mt-0.5 w-4 text-center"></i>
+                            info@mishraproperty.com
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="fa-regular fa-clock text-blue-400 mt-0.5 w-4 text-center"></i>
+                            Mon–Sat, 9AM – 7PM
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6 text-sm text-slate-400">
+                <span>&copy; <span id="year">2026</span> <span
+                        class="font-semibold text-slate-200">MishraProperty</span>. All rights reserved.</span>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Sitemap</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- ============================================================
+    JAVASCRIPT LOGIC
+    ============================================================ -->
     <script>
-        // Image Slider Functionality
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            'use strict';
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
+            const SCROLL_THRESHOLD = 50;
+            const DESKTOP_BREAKPOINT = 1024;
 
-        setInterval(nextSlide, 4000);
+            const header = document.getElementById('main-header');
+            const logoText = document.getElementById('logo-text');
+            const logoSubtext = document.getElementById('logo-subtext');
+            const phoneLink = document.getElementById('phone-link');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const drawerBackdrop = document.getElementById('drawer-backdrop');
+            const closeDrawerBtn = document.getElementById('close-drawer-btn');
+            const dropdownWrapper = document.getElementById('properties-dropdown-wrapper');
+            const dropdownBtn = document.getElementById('properties-dropdown-btn');
 
-        // Dynamic Typing Effect Functionality
-        const words = ["Luxury Villas", "Premium Apartments", "Plots & Lands", "Commercial Spaces"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
+            // ------------------------------------------------------------------
+            // 1. SCROLL EFFECT — hide on scroll-down, reveal on scroll-up
+            // ------------------------------------------------------------------
+            let lastScrollY = window.scrollY;
 
-        function typeEffect() {
-            const currentWord = words[wordIndex];
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
 
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
+                if (currentScrollY <= SCROLL_THRESHOLD) {
+                    header.classList.remove('header-hidden');
+                } else if (currentScrollY > lastScrollY) {
+                    header.classList.add('header-hidden');
+                } else if (currentScrollY < lastScrollY) {
+                    header.classList.remove('header-hidden');
+                }
+
+                lastScrollY = currentScrollY;
             }
 
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, 1500);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(typeEffect, 500);
-            } else {
-                setTimeout(typeEffect, isDeleting ? 50 : 100);
-            }
-        }
+            let scrollTicking = false;
 
-        document.addEventListener("DOMContentLoaded", typeEffect);
+            function onScroll() {
+                if (!scrollTicking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll();
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            handleScroll();
+
+            // ------------------------------------------------------------------
+            // 2. MEGA MENU: aria-expanded sync
+            // ------------------------------------------------------------------
+            function openMegaMenu() { dropdownBtn.setAttribute('aria-expanded', 'true'); }
+
+            function closeMegaMenu() { dropdownBtn.setAttribute('aria-expanded', 'false'); }
+            dropdownWrapper.addEventListener('mouseenter', openMegaMenu);
+            dropdownWrapper.addEventListener('mouseleave', closeMegaMenu);
+            dropdownBtn.addEventListener('focus', openMegaMenu);
+            dropdownWrapper.addEventListener('focusout', (e) => {
+                if (!dropdownWrapper.contains(e.relatedTarget)) closeMegaMenu();
+            });
+
+            // ------------------------------------------------------------------
+            // 3. MOBILE DRAWER
+            // ------------------------------------------------------------------
+            let lastFocusedElement = null;
+
+            function getFocusableDrawerElements() {
+                return mobileDrawer.querySelectorAll('a[href], button:not([disabled])');
+            }
+
+            function openDrawer() {
+                lastFocusedElement = document.activeElement;
+                mobileDrawer.classList.remove('translate-x-full');
+                mobileDrawer.classList.add('drawer-open');
+                drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+                mobileDrawer.setAttribute('aria-hidden', 'false');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                closeDrawerBtn.focus();
+                document.addEventListener('keydown', trapFocus);
+            }
+
+            function closeDrawer() {
+                mobileDrawer.classList.add('translate-x-full');
+                mobileDrawer.classList.remove('drawer-open');
+                drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+                mobileDrawer.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.removeEventListener('keydown', trapFocus);
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                } else {
+                    mobileMenuBtn.focus();
+                }
+            }
+
+            function trapFocus(e) {
+                if (e.key === 'Escape') { closeDrawer(); return; }
+                if (e.key !== 'Tab') return;
+                const focusable = Array.from(getFocusableDrawerElements());
+                if (focusable.length === 0) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', openDrawer);
+            closeDrawerBtn.addEventListener('click', closeDrawer);
+            drawerBackdrop.addEventListener('click', closeDrawer);
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            // Auto-close drawer on resize to desktop
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (window.innerWidth >= DESKTOP_BREAKPOINT &&
+                        !mobileDrawer.classList.contains('translate-x-full')) {
+                        closeDrawer();
+                    }
+                }, 150);
+            });
+
+            // ------------------------------------------------------------------
+            // 4. YEAR
+            // ------------------------------------------------------------------
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // ------------------------------------------------------------------
+            // 5. CONTACT FORM HANDLER
+            // ------------------------------------------------------------------
+            const contactForm = document.getElementById('contactForm');
+            const alertBox = document.getElementById('formAlert');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('fullName').value.trim() || 'Customer';
+
+                alertBox.className =
+                    'mb-6 p-4 rounded-xl text-sm font-semibold bg-emerald-50 border border-emerald-200 text-emerald-800 block shadow-sm animate-fadeInDown';
+                alertBox.innerHTML =
+                    `✅ Dhanyawad <strong>${name}</strong>! Aapka message successfully bhej diya gaya hai. Hum jald hi aapse contact karenge.`;
+
+                this.reset();
+
+                // Auto-hide alert after 6 seconds
+                setTimeout(() => {
+                    alertBox.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                        alertBox.classList.remove('opacity-0');
+                    }, 500);
+                }, 6000);
+            });
+        });
+
+
+
+        // ─── FAQ Accordion ───
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function () {
+                const targetId = this.dataset.target;
+                const answer = document.getElementById(targetId);
+                const icon = this.querySelector('.faq-icon');
+
+                if (!answer) return;
+
+                const isOpen = answer.classList.contains('open');
+
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    if (a !== answer) {
+                        a.classList.remove('open');
+                        const siblingIcon = a.closest('.glass-card')?.querySelector('.faq-icon');
+                        if (siblingIcon) siblingIcon.classList.remove('rotated');
+                    }
+                });
+
+                // Toggle current
+                if (isOpen) {
+                    answer.classList.remove('open');
+                    icon.classList.remove('rotated');
+                } else {
+                    answer.classList.add('open');
+                    icon.classList.add('rotated');
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>

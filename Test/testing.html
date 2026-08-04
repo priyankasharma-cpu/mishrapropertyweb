@@ -401,61 +401,6 @@
             </a>
         </div>
     </aside>
-
-    <!-- ================= SEARCH RESULTS POPUP MODAL ================= -->
-    <!--
-      User searches a location (e.g. "Vijay Nagar", "Pithampur") in the hero
-      search bar -> matching projects render as cards INSIDE this popup box:
-      image, name, location, rating, availability, visiting time, site-visit
-      contact person, and a "View More Details" button that redirects to
-      that project's own detail page.
-
-      IMPORTANT: the PROJECTS array (in the <script> at the bottom of the
-      page) currently has SAMPLE / PLACEHOLDER data as an example of the
-      structure. Replace it with your real project data (real images, real
-      locations, real contact names, real detail-page URLs).
-    -->
-    <div id="results-backdrop"
-        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[70] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
-        aria-hidden="true"></div>
-
-    <div id="results-modal"
-        class="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6 opacity-0 invisible pointer-events-none scale-95 transition-all duration-300 ease-out"
-        role="dialog" aria-modal="true" aria-labelledby="results-modal-title" aria-hidden="true">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[85vh] flex flex-col overflow-hidden">
-
-            <!-- MODAL HEADER -->
-            <div class="flex items-start justify-between gap-3 p-5 sm:p-6 border-b border-slate-100 shrink-0">
-                <div>
-                    <h2 id="results-modal-title" class="text-xl sm:text-2xl font-bold text-slate-900">
-                        Our Projects <span id="results-location-label" class="text-blue-600"></span>
-                    </h2>
-                    <span id="results-count" class="text-sm font-medium text-slate-500"></span>
-                </div>
-                <button id="results-modal-close" type="button"
-                    class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors shrink-0"
-                    aria-label="Close results">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- MODAL BODY: SCROLLABLE CARD GRID -->
-            <div class="p-5 sm:p-6 overflow-y-auto flex-1">
-                <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-                <div id="no-results" class="hidden text-center py-14 bg-slate-50 rounded-2xl border border-slate-100">
-                    <i class="fa-solid fa-magnifying-glass-location text-3xl text-slate-300 mb-3"></i>
-                    <p class="text-slate-500 font-medium">No projects found for this search.</p>
-                    <p class="text-slate-400 text-sm mt-1">Try a different location, like "Vijay Nagar" or
-                        "Pithampur".</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <main class="pt-20 px-1">
         <!-- HERO SECTION -->
         <section class="relative w-full min-h-screen overflow-hidden bg-white font-sans">
@@ -464,23 +409,23 @@
             <div class="absolute inset-0 z-0">
                 <!-- SLIDE 1 -->
                 <div class="hero-slide active">
-                    <img src="assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png"
+                    <img src="../assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png"
                         alt="Modern villa exterior at dusk" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 2 -->
                 <div class="hero-slide">
-                    <img src="assets/image/bgimage4.png" alt="Luxury apartment building" class="hero-image" />
+                    <img src="../assets/image/bgimage4.png" alt="Luxury apartment building" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 3 -->
                 <div class="hero-slide">
-                    <img src="assets/image/bgimage2.png" alt="Residential township aerial view" class="hero-image" />
+                    <img src="../assets/image/bgimage2.png" alt="Residential township aerial view" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 4 -->
                 <div class="hero-slide">
-                    <img src="assets/image/unnamed.webp" alt="Premium villa plots entrance" class="hero-image" />
+                    <img src="../assets/image/unnamed.webp" alt="Premium villa plots entrance" class="hero-image" />
                 </div>
 
                 <!-- SOFT OVERALL LIGHTENING OVERLAY -->
@@ -645,62 +590,551 @@
         </section>
 
         <!-- ================= BOTTOM FEATURES / BADGES BAR ================= -->
-        <div
-            class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-white/60 shadow-lg">
+        <section class="max-w-7xl mx-auto px-1 sm:px-2 lg:px-0 pt-10 pb-4">
+            <div
+                class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-white/60 shadow-lg">
 
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-shield-halved"></i>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 text-sm">Verified Listings</h5>
+                        <p class="text-xs text-slate-500">All properties are checked and verified</p>
+                    </div>
                 </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Verified Listings</h5>
-                    <p class="text-xs text-slate-500">All properties are checked and verified</p>
+
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 text-sm">Best Price Guarantee</h5>
+                        <p class="text-xs text-slate-500">Get the best deals available</p>
+                    </div>
                 </div>
+
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 text-sm">Expert Support</h5>
+                        <p class="text-xs text-slate-500">Our agents are here to help you</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 text-sm">Easy & Secure</h5>
+                        <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= SEARCH RESULTS: PROJECT CARDS ================= -->
+        <!--
+          User searches a location (e.g. "Vijay Nagar", "Pithampur") in the
+          bar above -> matching projects render here as cards: image, name,
+          location, rating, availability status, visiting time, site-visit
+          contact person, and a "View More Details" button that redirects
+          to that project's own detail page.
+
+          IMPORTANT: the PROJECTS array below (in the <script> at the bottom
+          of the page) currently has SAMPLE / PLACEHOLDER data as an example
+          of the structure. Replace it with your real project data (real
+          images, real locations, real contact names, real detail-page URLs).
+        -->
+        <section id="search-results" class="max-w-7xl mx-auto px-1 sm:px-2 lg:px-0 pt-10 pb-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                    Our Projects <span id="results-location-label" class="text-blue-600"></span>
+                </h2>
+                <span id="results-count" class="text-sm font-medium text-slate-500"></span>
             </div>
 
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-tags"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Best Price Guarantee</h5>
-                    <p class="text-xs text-slate-500">Get the best deals available</p>
-                </div>
-            </div>
+            <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Expert Support</h5>
-                    <p class="text-xs text-slate-500">Our agents are here to help you</p>
-                </div>
+            <div id="no-results" class="hidden text-center py-14 bg-slate-50 rounded-2xl border border-slate-100">
+                <i class="fa-solid fa-magnifying-glass-location text-3xl text-slate-300 mb-3"></i>
+                <p class="text-slate-500 font-medium">No projects found for this search.</p>
+                <p class="text-slate-400 text-sm mt-1">Try a different location, like "Vijay Nagar" or "Pithampur".</p>
             </div>
+        </section>
 
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Easy & Secure</h5>
-                    <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
-                </div>
-            </div>
 
-        </div>
 
     </main>
 
     <!-- JAVASCRIPT LOGIC -->
-    <script src="/assets/js/projects-data.js"></script>
-    <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/hero-slider.js"></script>
-    <script src="/assets/js/project-search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            'use strict';
+
+            const SCROLL_THRESHOLD = 50;
+            const DESKTOP_BREAKPOINT = 1024; // matches Tailwind's `lg` breakpoint
+
+            const header = document.getElementById('main-header');
+            const logoText = document.getElementById('logo-text');
+            const logoSubtext = document.getElementById('logo-subtext');
+            const phoneLink = document.getElementById('phone-link');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const drawerBackdrop = document.getElementById('drawer-backdrop');
+            const closeDrawerBtn = document.getElementById('close-drawer-btn');
+            const dropdownWrapper = document.getElementById('properties-dropdown-wrapper');
+            const dropdownBtn = document.getElementById('properties-dropdown-btn');
+
+            const navLinks = [
+                document.getElementById('nav-home'),
+                document.getElementById('nav-about'),
+                document.getElementById('nav-projects'),
+                document.getElementById('properties-dropdown-btn'),
+                document.getElementById('nav-services'),
+                document.getElementById('nav-gallery'),
+                document.getElementById('nav-contact')
+            ].filter(Boolean);
+
+            // ------------------------------------------------------------------
+            // 1. SCROLL EFFECT — header is now ALWAYS white/solid (no more
+            //    transparent-at-top state, as requested). The only behavior
+            //    left here is: hide header on scroll-down, reveal it again
+            //    on scroll-up (classic "sticky reveal" navbar pattern).
+            //    Throttled via requestAnimationFrame so it never fires
+            //    50-100+ times/sec on scroll (perf fix).
+            // ------------------------------------------------------------------
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY <= SCROLL_THRESHOLD) {
+                    // Always visible near the very top of the page.
+                    header.classList.remove('header-hidden');
+                } else if (currentScrollY > lastScrollY) {
+                    // Scrolling DOWN -> hide.
+                    header.classList.add('header-hidden');
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling UP -> reveal.
+                    header.classList.remove('header-hidden');
+                }
+
+                lastScrollY = currentScrollY;
+            }
+
+            let scrollTicking = false;
+            function onScroll() {
+                if (!scrollTicking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll();
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            handleScroll(); // set correct initial state on load
+
+            // ------------------------------------------------------------------
+            // 2. MEGA MENU: keep aria-expanded in sync with actual visible state
+            //    (hover-only CSS never reported this to screen readers before)
+            // ------------------------------------------------------------------
+            function openMegaMenu() {
+                dropdownBtn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMegaMenu() {
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+            dropdownWrapper.addEventListener('mouseenter', openMegaMenu);
+            dropdownWrapper.addEventListener('mouseleave', closeMegaMenu);
+            dropdownBtn.addEventListener('focus', openMegaMenu);
+            dropdownWrapper.addEventListener('focusout', (e) => {
+                if (!dropdownWrapper.contains(e.relatedTarget)) closeMegaMenu();
+            });
+
+            // ------------------------------------------------------------------
+            // 3. MOBILE DRAWER CONTROLS
+            //    - Syncs aria-hidden / aria-expanded for assistive tech
+            //    - Moves focus into the drawer on open, and back to the
+            //      trigger button on close (basic focus management)
+            //    - Simple focus trap while drawer is open (Tab / Shift+Tab)
+            //    - FIX: now actually toggles "drawer-open" so the
+            //      .drawer-open .drawer-link fadeInDown CSS rule fires.
+            // ------------------------------------------------------------------
+            let lastFocusedElement = null;
+
+            function getFocusableDrawerElements() {
+                return mobileDrawer.querySelectorAll(
+                    'a[href], button:not([disabled])'
+                );
+            }
+
+            function openDrawer() {
+                lastFocusedElement = document.activeElement;
+
+                mobileDrawer.classList.remove('translate-x-full');
+                mobileDrawer.classList.add('drawer-open');
+                drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+
+                mobileDrawer.setAttribute('aria-hidden', 'false');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+                closeDrawerBtn.focus();
+                document.addEventListener('keydown', trapFocus);
+            }
+
+            function closeDrawer() {
+                mobileDrawer.classList.add('translate-x-full');
+                mobileDrawer.classList.remove('drawer-open');
+                drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+
+                mobileDrawer.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+                document.removeEventListener('keydown', trapFocus);
+
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                } else {
+                    mobileMenuBtn.focus();
+                }
+            }
+
+            function trapFocus(e) {
+                if (e.key === 'Escape') {
+                    closeDrawer();
+                    return;
+                }
+                if (e.key !== 'Tab') return;
+
+                const focusable = Array.from(getFocusableDrawerElements());
+                if (focusable.length === 0) return;
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', openDrawer);
+            closeDrawerBtn.addEventListener('click', closeDrawer);
+            drawerBackdrop.addEventListener('click', closeDrawer);
+
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            // ------------------------------------------------------------------
+            // 4. Auto-close drawer if window is resized up to desktop width
+            //    (fixes stuck-open-drawer edge case on orientation/resize)
+            // ------------------------------------------------------------------
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (window.innerWidth >= DESKTOP_BREAKPOINT &&
+                        !mobileDrawer.classList.contains('translate-x-full')) {
+                        closeDrawer();
+                    }
+                }, 150);
+            });
+        });
+
+        // Dynamic Year Script
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+        // Background Slider Script
+        const slides = document.querySelectorAll(".hero-slide");
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 5000);
+
+        // Typing Text Effect (Updated with Real Estate categories)
+        const words = [
+            "Luxury Villas",
+            "Premium Apartments",
+            "Commercial Spaces",
+            "Residential Plots",
+            "Investment Deals"
+        ];
+
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+
+        const typingText = document.getElementById("typing-text");
+
+        function type() {
+            if (!typingText) return;
+
+            currentWord = words[i];
+
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, j--);
+            } else {
+                typingText.textContent = currentWord.substring(0, j++);
+            }
+
+            if (!isDeleting && j === currentWord.length + 1) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+                return;
+            }
+
+            if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+            }
+
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+
+        type();
+
+        // ==================================================================
+        // PROJECT SEARCH + RESULT CARDS
+        // ==================================================================
+        // SAMPLE DATA — replace every field below with your real projects.
+        // location : must contain the area name so text-search can match it
+        //            (e.g. "Vijay Nagar, Indore", "Sector 3, Pithampur")
+        // type     : must exactly match a <select> option -> "Luxury Villa" | "Apartment" | "Plot"
+        // priceCategory : must exactly match a <select> option text, OR
+        //                 the widest option ("₹50L - ₹5Cr+") which always matches
+        // bhk      : number used for the "2+ BHK / 3+ BHK" filter
+        // status   : "available" | "limited" | "soldout"
+        // detailLink : the real URL of that project's own detail page
+        const PROJECTS = [
+            {
+                id: 'greenfield-estate',
+                name: 'Greenfield Estate',
+                location: 'Vijay Nagar, Indore',
+                image: '../assets/image/bgimage4.png',
+                type: 'Luxury Villa',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.6,
+                status: 'available',
+                visitTime: '10:00 AM – 6:00 PM',
+                contactName: 'Rahul Sharma',
+                contactPhone: '+919876543210',
+                detailLink: 'project-details.html?id=greenfield-estate'
+            },
+            {
+                id: 'sunrise-residency',
+                name: 'Sunrise Residency',
+                location: 'Rajendra Nagar, Indore',
+                image: '../assets/image/bgimage2.png',
+                type: 'Apartment',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 2,
+                rating: 4.3,
+                status: 'limited',
+                visitTime: '9:00 AM – 5:00 PM',
+                contactName: 'Priya Verma',
+                contactPhone: '+919876500001',
+                detailLink: 'project-details.html?id=sunrise-residency'
+            },
+            {
+                id: 'royal-orchid-plots',
+                name: 'Royal Orchid Plots',
+                location: 'Bypass Road, Indore',
+                image: '../assets/image/unnamed.webp',
+                type: 'Plot',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 0,
+                rating: 4.1,
+                status: 'available',
+                visitTime: '10:00 AM – 7:00 PM',
+                contactName: 'Amit Joshi',
+                contactPhone: '+919876500002',
+                detailLink: 'project-details.html?id=royal-orchid-plots'
+            },
+            {
+                id: 'industrial-heights',
+                name: 'Industrial Heights',
+                location: 'Sector 3, Pithampur',
+                image: '../assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png',
+                type: 'Plot',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 0,
+                rating: 4.4,
+                status: 'available',
+                visitTime: '9:30 AM – 6:00 PM',
+                contactName: 'Vikas Patel',
+                contactPhone: '+919876500003',
+                detailLink: 'project-details.html?id=industrial-heights'
+            },
+            {
+                id: 'pithampur-green-villas',
+                name: 'Pithampur Green Villas',
+                location: 'Sector 1, Pithampur',
+                image: '../assets/image/bgimage4.png',
+                type: 'Luxury Villa',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.5,
+                status: 'soldout',
+                visitTime: '10:00 AM – 6:00 PM',
+                contactName: 'Neha Rathore',
+                contactPhone: '+919876500004',
+                detailLink: 'project-details.html?id=pithampur-green-villas'
+            },
+            {
+                id: 'blue-lagoon-apartments',
+                name: 'Blue Lagoon Apartments',
+                location: 'Rau, Indore',
+                image: '../assets/image/bgimage2.png',
+                type: 'Apartment',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.2,
+                status: 'available',
+                visitTime: '9:00 AM – 6:00 PM',
+                contactName: 'Sanjay Malviya',
+                contactPhone: '+919876500005',
+                detailLink: 'project-details.html?id=blue-lagoon-apartments'
+            }
+        ];
+
+        const STATUS_BADGES = {
+            available: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700"><i class="fa-solid fa-circle-check"></i>Available</span>',
+            limited: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700"><i class="fa-solid fa-triangle-exclamation"></i>Limited Units</span>',
+            soldout: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700"><i class="fa-solid fa-ban"></i>Sold Out</span>'
+        };
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderProjectCards(list) {
+            const grid = document.getElementById('results-grid');
+            const noResults = document.getElementById('no-results');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col';
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img src="${p.image}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover"
+                             onerror="this.style.display='none'">
+                        <div class="absolute top-3 left-3">${STATUS_BADGES[p.status] || ''}</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <div class="flex items-start justify-between gap-2">
+                            <h3 class="font-bold text-lg text-slate-900 leading-snug">${escapeHtml(p.name)}</h3>
+                            <div class="flex items-center gap-1 text-amber-500 text-sm font-semibold shrink-0 pt-0.5">
+                                <i class="fa-solid fa-star"></i>${p.rating}
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-1.5">
+                            <i class="fa-solid fa-location-dot text-blue-500 w-4"></i>${escapeHtml(p.location)}
+                        </p>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-2">
+                            <i class="fa-regular fa-clock text-blue-500 w-4"></i>Visit: ${escapeHtml(p.visitTime)}
+                        </p>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-2">
+                            <i class="fa-regular fa-user text-blue-500 w-4"></i>Contact: ${escapeHtml(p.contactName)}
+                        </p>
+                        <a href="${p.detailLink}"
+                           class="mt-4 inline-flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl transition-colors">
+                            View More Details<i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function runPropertySearch(scroll) {
+            const locationInput = document.getElementById('search-location');
+            const typeInput = document.getElementById('search-type');
+            const priceInput = document.getElementById('search-price');
+            const bedsInput = document.getElementById('search-beds');
+            if (!locationInput) return;
+
+            const locationQuery = locationInput.value.trim().toLowerCase();
+            const typeQuery = typeInput.value;
+            const priceQuery = priceInput.value;
+            const bedsQuery = bedsInput.value;
+
+            const filtered = PROJECTS.filter(p => {
+                const matchLocation = !locationQuery || p.location.toLowerCase().includes(locationQuery);
+                const matchType = typeQuery === 'Any Type' || p.type === typeQuery;
+                // The first price option is the widest range -> treat as "any price"
+                const matchPrice = priceQuery === '₹50L - ₹5Cr+' || p.priceCategory === priceQuery;
+                const matchBeds =
+                    bedsQuery === 'Any' ||
+                    (bedsQuery === '2+ BHK' && p.bhk >= 2) ||
+                    (bedsQuery === '3+ BHK' && p.bhk >= 3);
+                return matchLocation && matchType && matchPrice && matchBeds;
+            });
+
+            const label = document.getElementById('results-location-label');
+            const count = document.getElementById('results-count');
+            if (label) label.textContent = locationQuery ? `near "${locationInput.value.trim()}"` : '';
+            if (count) count.textContent = `${filtered.length} project${filtered.length !== 1 ? 's' : ''} found`;
+
+            renderProjectCards(filtered);
+
+            if (scroll) {
+                document.getElementById('search-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Initial render: show every project before the user searches anything
+        renderProjectCards(PROJECTS);
+        (function initialCount() {
+            const count = document.getElementById('results-count');
+            if (count) count.textContent = `${PROJECTS.length} projects found`;
+        })();
+
+        // Intercept the search form so Enter / Search button never reloads
+        // the page — it just re-filters the cards below instead.
+        const propertySearchForm = document.getElementById('property-search-form');
+        if (propertySearchForm) {
+            propertySearchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                runPropertySearch(true);
+            });
+        }
+
+    </script>
 </body>
 
 </html>

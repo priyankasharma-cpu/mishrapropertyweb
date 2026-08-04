@@ -145,13 +145,6 @@
             }
         }
 
-        /*
-          FIX #2 — hide-on-scroll-down / show-on-scroll-up:
-          Header slides fully out of view via translateY(-100%) when the user
-          scrolls down past the threshold, and slides back in the moment they
-          scroll up (or return near the top). transition-transform (already
-          in the header's class list) makes this animate smoothly.
-        */
         #main-header.header-hidden {
             transform: translateY(-100%);
         }
@@ -464,23 +457,23 @@
             <div class="absolute inset-0 z-0">
                 <!-- SLIDE 1 -->
                 <div class="hero-slide active">
-                    <img src="assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png"
+                    <img src="../assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png"
                         alt="Modern villa exterior at dusk" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 2 -->
                 <div class="hero-slide">
-                    <img src="assets/image/bgimage4.png" alt="Luxury apartment building" class="hero-image" />
+                    <img src="../assets/image/bgimage4.png" alt="Luxury apartment building" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 3 -->
                 <div class="hero-slide">
-                    <img src="assets/image/bgimage2.png" alt="Residential township aerial view" class="hero-image" />
+                    <img src="../assets/image/bgimage2.png" alt="Residential township aerial view" class="hero-image" />
                 </div>
 
                 <!-- SLIDE 4 -->
                 <div class="hero-slide">
-                    <img src="assets/image/unnamed.webp" alt="Premium villa plots entrance" class="hero-image" />
+                    <img src="../assets/image/unnamed.webp" alt="Premium villa plots entrance" class="hero-image" />
                 </div>
 
                 <!-- SOFT OVERALL LIGHTENING OVERLAY -->
@@ -694,413 +687,11 @@
 
         </div>
 
-        <!-- FEATURED PROJECTS SECTION START -->
-        <section
-            class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 via-blue-50/20 to-slate-100 text-slate-800 relative overflow-hidden font-sans">
 
-            <!-- Subtle Gradient Background Accents -->
-            <div
-                class="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-[#155DFC]/10 via-blue-400/10 to-transparent blur-3xl rounded-full pointer-events-none">
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-                <!-- Section Header -->
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-                    <div>
-                        <span
-                            class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full bg-[#155DFC]/10 border border-[#155DFC]/20 text-[#155DFC] text-xs font-bold tracking-widest uppercase mb-3 shadow-sm">
-                            <span class="w-2 h-2 rounded-full bg-[#155DFC] animate-pulse"></span>
-                            Gracelands Premium Projects
-                        </span>
-                        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
-                            Our Featured Projects
-                        </h2>
-                        <p class="mt-3 text-slate-600 text-base sm:text-lg max-w-2xl">
-                            Prime residential plots with 10% down payment, 0% interest EMI options & 100% legal clear
-                            titles.
-                        </p>
-                    </div>
-
-                    <!-- Navigation Arrows -->
-                    <div class="flex items-center gap-3 self-end">
-                        <button onclick="scrollCards('left')"
-                            class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 hover:bg-[#155DFC] hover:text-white hover:border-[#155DFC] shadow-sm transition-all duration-300 group">
-                            <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                        </button>
-                        <button onclick="scrollCards('right')"
-                            class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 hover:bg-[#155DFC] hover:text-white hover:border-[#155DFC] shadow-sm transition-all duration-300 group">
-                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Filter & Search Bar -->
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
-
-                    <!-- Filters -->
-                    <div class="flex flex-wrap gap-2 w-full lg:w-auto" id="projectFiltersRow">
-                        <button onclick="filterRowProjects('all')"
-                            class="row-filter-btn active-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-[#155DFC] to-blue-700 text-white shadow-md shadow-[#155DFC]/20">
-                            All Projects
-                        </button>
-                        <button onclick="filterRowProjects('new')"
-                            class="row-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 shadow-sm">
-                            New Launch 🔥
-                        </button>
-                        <button onclick="filterRowProjects('ab-road')"
-                            class="row-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 shadow-sm">
-                            AB Road Mangliya 📍
-                        </button>
-                    </div>
-
-                    <!-- Live Search Box -->
-                    <div class="relative w-full lg:w-80">
-                        <input type="text" id="projectSearchRow" placeholder="Search project name..."
-                            onkeyup="searchRowProjects()"
-                            class="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20 transition-all shadow-sm placeholder:text-slate-400">
-                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Single Row Scrollable Cards Container -->
-                <div id="cardsRowContainer"
-                    class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-1 no-scrollbar min-h-[620px]"
-                    style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <!-- Rich Cards Dynamic Render via JS -->
-                </div>
-
-            </div>
-
-            <!-- Detailed Modal -->
-            <div id="rowInquiryModal"
-                class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-md hidden transition-opacity duration-300 opacity-0">
-                <div
-                    class="bg-white border border-slate-100 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
-                    <button onclick="closeRowModal()"
-                        class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 p-1 text-xl font-bold">
-                        ✕
-                    </button>
-
-                    <div class="mb-6">
-                        <span
-                            class="text-[11px] font-bold uppercase tracking-widest text-[#155DFC] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">Free
-                            Site Visit & Booking</span>
-                        <h3 class="text-2xl font-black text-slate-900 mt-2" id="modalRowProjectTitle">Project Name</h3>
-                        <p class="text-xs text-slate-500 mt-1">Book your plot with just 10% Down Payment & 0% Interest
-                            EMI.</p>
-                    </div>
-
-                    <form onsubmit="handleRowInquirySubmit(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your
-                                Name</label>
-                            <input type="text" required placeholder="Full Name"
-                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Phone
-                                Number</label>
-                            <input type="tel" required placeholder="+91 79873 80096"
-                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20">
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-gradient-to-r from-[#155DFC] to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-[#155DFC]/25 mt-2">
-                            Request Free Site Visit
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- JavaScript Logic -->
-            <script>
-                const rowProjectsData = [
-                    {
-                        id: 1,
-                        name: "Highway Blossom",
-                        rate: "₹3,300",
-                        location: "AB Road, Mangliya",
-                        badge: "Premium Layout",
-                        category: "ab-road",
-                        plotSizes: ["600", "800", "1000", "1200"],
-                        highlights: ["10% Down Payment", "0% Interest EMI", "100% Legal & Clear Title"],
-                        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 2,
-                        name: "Highway Serene City 2",
-                        rate: "₹3,400",
-                        location: "AB Road, Mangliya",
-                        badge: "Popular Project",
-                        category: "ab-road",
-                        plotSizes: ["600", "800", "1000", "1200"],
-                        highlights: ["Wide Roads & Plantation", "0% Interest EMI", "Gated Security"],
-                        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 3,
-                        name: "Highway Oasis",
-                        rate: "₹3,775",
-                        location: "Prime Location",
-                        badge: "Luxury Township",
-                        category: "premium",
-                        plotSizes: ["800", "1000", "1200", "1500"],
-                        highlights: ["Green Environment", "Easy 12-24 Mth Pay", "Clear Legal Title"],
-                        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 4,
-                        name: "Highway Landmark",
-                        rate: "₹2,975",
-                        location: "Prime Location",
-                        badge: "Best Value",
-                        category: "budget",
-                        plotSizes: ["600", "800", "1000"],
-                        highlights: ["High Growth Area", "10% Booking Amount", "Water & Electricity"],
-                        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 5,
-                        name: "Highway Avenue",
-                        rate: "₹4,400",
-                        location: "Prime Location",
-                        badge: "Grand Township",
-                        category: "premium",
-                        plotSizes: ["1000", "1200", "1500", "2000"],
-                        highlights: ["Near Schools/Hospitals", "Gated Campus", "Flexible EMI Plan"],
-                        image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 6,
-                        name: "Highway Trident",
-                        rate: "₹2,650",
-                        location: "New Launching Colony",
-                        badge: "New Launch 🔥",
-                        category: "new",
-                        plotSizes: ["600", "800", "1000", "1200"],
-                        highlights: ["Introductory Rate", "0% Interest EMI", "10% Down Payment"],
-                        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 7,
-                        name: "Highway Season",
-                        rate: "₹2,699",
-                        location: "Prime Location",
-                        badge: "Hot Deal",
-                        category: "budget",
-                        plotSizes: ["600", "800", "1000"],
-                        highlights: ["100% Clear Title", "Direct Connectivity", "Water & Drainage"],
-                        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
-                    },
-                    {
-                        id: 8,
-                        name: "Highway Aura",
-                        rate: "₹3,400",
-                        location: "Prime Location",
-                        badge: "Exclusive",
-                        category: "premium",
-                        plotSizes: ["800", "1000", "1200"],
-                        highlights: ["Safe Gated Community", "Planned Development", "0% Interest EMI"],
-                        image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80"
-                    }
-                ];
-
-                let currentFilterState = 'all';
-
-                function renderRowCards(items) {
-                    const container = document.getElementById('cardsRowContainer');
-                    container.innerHTML = '';
-
-                    if (items.length === 0) {
-                        container.innerHTML = `
-          <div class="w-full flex items-center justify-center py-20 text-slate-400 text-base font-semibold">
-            No projects matched your criteria.
-          </div>
-        `;
-                        return;
-                    }
-
-                    items.forEach(p => {
-                        const card = document.createElement('div');
-                        // Extra width and height for rich presentation
-                        card.className = `snap-start flex-none w-[340px] sm:w-[410px] bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:border-[#155DFC] transition-all duration-300 flex flex-col justify-between group`;
-
-                        // Render plot size pills
-                        const sizesHTML = p.plotSizes.map(s =>
-                            `<span class="px-2.5 py-1 bg-slate-100 border border-slate-200 text-slate-800 rounded-lg text-xs font-bold">${s} <span class="text-[10px] text-slate-500 font-normal">sq.ft</span></span>`
-                        ).join('');
-
-                        // Render feature checkmarks
-                        const highlightsHTML = p.highlights.map(h =>
-                            `<li class="flex items-center text-xs text-slate-600 font-medium gap-1.5">
-            <svg class="w-3.5 h-3.5 text-[#155DFC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-            ${h}
-          </li>`
-                        ).join('');
-
-                        card.innerHTML = `
-          <div>
-            <!-- Top Section: Image Box -->
-            <div class="relative h-60 sm:h-64 overflow-hidden bg-slate-100">
-              <img 
-                src="${p.image}" 
-                alt="${p.name}" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent"></div>
-              
-              <!-- Badge -->
-              <span class="absolute top-4 left-4 bg-[#155DFC] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-md">
-                ${p.badge}
-              </span>
-
-              <!-- Location Tag -->
-              <div class="absolute bottom-3 left-4 flex items-center text-xs text-white font-medium bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
-                <svg class="w-3.5 h-3.5 mr-1 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                </svg>
-                <span>${p.location}</span>
-              </div>
-            </div>
-
-            <!-- Content Container -->
-            <div class="p-6">
-              
-              <!-- Title & Rate Box -->
-              <div class="flex items-start justify-between gap-2 mb-4">
-                <div>
-                  <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#155DFC] transition-colors leading-tight">
-                    ${p.name}
-                  </h3>
-                  <span class="text-[11px] font-bold text-emerald-600 tracking-wide uppercase">10% Down Payment Booking</span>
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-[#155DFC]/30 p-2.5 rounded-xl text-right shrink-0">
-                  <span class="block text-[9px] font-extrabold uppercase text-slate-400 tracking-wider">Starting Rate</span>
-                  <span class="text-lg font-black text-[#155DFC]">${p.rate}<span class="text-xs text-slate-500 font-semibold">/sq.ft</span></span>
-                </div>
-              </div>
-
-              <!-- Available Plot Sizes -->
-              <div class="mb-4">
-                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Available Plot Sizes</span>
-                <div class="flex flex-wrap gap-1.5">
-                  ${sizesHTML}
-                </div>
-              </div>
-
-              <!-- Key Highlights -->
-              <div class="pt-3 border-t border-slate-100">
-                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Project Highlights</span>
-                <ul class="space-y-1.5">
-                  ${highlightsHTML}
-                </ul>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Bottom Action Buttons -->
-          <div class="px-6 pb-6 pt-0">
-            <button 
-              onclick="openRowModal('${p.name}')" 
-              class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#155DFC] to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-md shadow-[#155DFC]/20 hover:shadow-lg hover:shadow-[#155DFC]/30 flex items-center justify-center gap-2 group/btn"
-            >
-              <span>Book Site Visit / Details</span>
-              <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </div>
-        `;
-
-                        container.appendChild(card);
-                    });
-                }
-
-                function scrollCards(direction) {
-                    const container = document.getElementById('cardsRowContainer');
-                    const scrollAmount = 420;
-                    container.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
-                }
-
-                function filterRowProjects(type) {
-                    currentFilterState = type;
-
-                    document.querySelectorAll('.row-filter-btn').forEach(btn => {
-                        btn.classList.remove('bg-gradient-to-r', 'from-[#155DFC]', 'to-blue-700', 'text-white', 'shadow-md', 'shadow-[#155DFC]/20');
-                        btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                    });
-
-                    event.currentTarget.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                    event.currentTarget.classList.add('bg-gradient-to-r', 'from-[#155DFC]', 'to-blue-700', 'text-white', 'shadow-md', 'shadow-[#155DFC]/20');
-
-                    applyRowFilters();
-                }
-
-                function searchRowProjects() {
-                    applyRowFilters();
-                }
-
-                function applyRowFilters() {
-                    const query = document.getElementById('projectSearchRow').value.toLowerCase();
-
-                    const filtered = rowProjectsData.filter(p => {
-                        const matchesCategory =
-                            currentFilterState === 'all' ||
-                            p.category.includes(currentFilterState);
-
-                        const matchesQuery =
-                            p.name.toLowerCase().includes(query) ||
-                            p.location.toLowerCase().includes(query) ||
-                            p.rate.toLowerCase().includes(query);
-
-                        return matchesCategory && matchesQuery;
-                    });
-
-                    renderRowCards(filtered);
-                }
-
-                function openRowModal(projectName) {
-                    document.getElementById('modalRowProjectTitle').innerText = projectName;
-                    const modal = document.getElementById('rowInquiryModal');
-                    modal.classList.remove('hidden');
-                    setTimeout(() => modal.classList.remove('opacity-0'), 10);
-                }
-
-                function closeRowModal() {
-                    const modal = document.getElementById('rowInquiryModal');
-                    modal.classList.add('opacity-0');
-                    setTimeout(() => modal.classList.add('hidden'), 300);
-                }
-
-                function handleRowInquirySubmit(e) {
-                    e.preventDefault();
-                    alert('Thank you! Our agent will contact you for a free site visit & full details.');
-                    closeRowModal();
-                }
-
-                document.addEventListener('DOMContentLoaded', () => {
-                    renderRowCards(rowProjectsData);
-                });
-            </script>
-
-        </section>
-        <!-- FEATURED PROJECTS SECTION END -->
 
 
     </main>
+
 
     <!-- ============================================================
 FOOTER
@@ -1148,17 +739,12 @@ FOOTER
                 <div>
                     <h5 class="font-semibold text-white mb-4">Quick Links</h5>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="/properties.html"
-                                class="text-slate-400 hover:text-blue-400 transition-colors">Properties</a></li>
-                        <li><a href="/about.html" class="text-slate-400 hover:text-blue-400 transition-colors">About
-                                Us</a></li>
-                        <li><a href="index.html"
-                                class="text-slate-400 hover:text-blue-400 transition-colors">Testimonials</a>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Properties</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Testimonials</a>
                         </li>
-                        <li><a href="/index.html" class="text-slate-400 hover:text-blue-400 transition-colors">Blog</a>
-                        </li>
-                        <li><a href="/contact.html"
-                                class="text-slate-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
@@ -1219,17 +805,555 @@ FOOTER
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
-    <script src="/assets/js/projects-data.js"></script>
-    <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/hero-slider.js"></script>
-    <script src="/assets/js/project-search.js"></script>
-
     <script>
-        // ------------------------------------------------------------------
-        // 5. YEAR
-        // ------------------------------------------------------------------
-        const yearEl = document.getElementById('year');
+        document.addEventListener('DOMContentLoaded', () => {
+            'use strict';
+
+            const SCROLL_THRESHOLD = 50;
+            const DESKTOP_BREAKPOINT = 1024; // matches Tailwind's `lg` breakpoint
+
+            const header = document.getElementById('main-header');
+            const logoText = document.getElementById('logo-text');
+            const logoSubtext = document.getElementById('logo-subtext');
+            const phoneLink = document.getElementById('phone-link');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const drawerBackdrop = document.getElementById('drawer-backdrop');
+            const closeDrawerBtn = document.getElementById('close-drawer-btn');
+            const dropdownWrapper = document.getElementById('properties-dropdown-wrapper');
+            const dropdownBtn = document.getElementById('properties-dropdown-btn');
+
+            const navLinks = [
+                document.getElementById('nav-home'),
+                document.getElementById('nav-about'),
+                document.getElementById('nav-projects'),
+                document.getElementById('properties-dropdown-btn'),
+                document.getElementById('nav-services'),
+                document.getElementById('nav-gallery'),
+                document.getElementById('nav-contact')
+            ].filter(Boolean);
+
+            // ------------------------------------------------------------------
+            // 1. SCROLL EFFECT — header is now ALWAYS white/solid (no more
+            //    transparent-at-top state, as requested). The only behavior
+            //    left here is: hide header on scroll-down, reveal it again
+            //    on scroll-up (classic "sticky reveal" navbar pattern).
+            //    Throttled via requestAnimationFrame so it never fires
+            //    50-100+ times/sec on scroll (perf fix).
+            // ------------------------------------------------------------------
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY <= SCROLL_THRESHOLD) {
+                    // Always visible near the very top of the page.
+                    header.classList.remove('header-hidden');
+                } else if (currentScrollY > lastScrollY) {
+                    // Scrolling DOWN -> hide.
+                    header.classList.add('header-hidden');
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling UP -> reveal.
+                    header.classList.remove('header-hidden');
+                }
+
+                lastScrollY = currentScrollY;
+            }
+
+            let scrollTicking = false;
+            function onScroll() {
+                if (!scrollTicking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll();
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            handleScroll(); // set correct initial state on load
+
+            // ------------------------------------------------------------------
+            // 2. MEGA MENU: keep aria-expanded in sync with actual visible state
+            //    (hover-only CSS never reported this to screen readers before)
+            // ------------------------------------------------------------------
+            function openMegaMenu() {
+                dropdownBtn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMegaMenu() {
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+            dropdownWrapper.addEventListener('mouseenter', openMegaMenu);
+            dropdownWrapper.addEventListener('mouseleave', closeMegaMenu);
+            dropdownBtn.addEventListener('focus', openMegaMenu);
+            dropdownWrapper.addEventListener('focusout', (e) => {
+                if (!dropdownWrapper.contains(e.relatedTarget)) closeMegaMenu();
+            });
+
+            // ------------------------------------------------------------------
+            // 3. MOBILE DRAWER CONTROLS
+            //    - Syncs aria-hidden / aria-expanded for assistive tech
+            //    - Moves focus into the drawer on open, and back to the
+            //      trigger button on close (basic focus management)
+            //    - Simple focus trap while drawer is open (Tab / Shift+Tab)
+            //    - FIX: now actually toggles "drawer-open" so the
+            //      .drawer-open .drawer-link fadeInDown CSS rule fires.
+            // ------------------------------------------------------------------
+            let lastFocusedElement = null;
+
+            function getFocusableDrawerElements() {
+                return mobileDrawer.querySelectorAll(
+                    'a[href], button:not([disabled])'
+                );
+            }
+
+            function openDrawer() {
+                lastFocusedElement = document.activeElement;
+
+                mobileDrawer.classList.remove('translate-x-full');
+                mobileDrawer.classList.add('drawer-open');
+                drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+
+                mobileDrawer.setAttribute('aria-hidden', 'false');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+                closeDrawerBtn.focus();
+                document.addEventListener('keydown', trapFocus);
+            }
+
+            function closeDrawer() {
+                mobileDrawer.classList.add('translate-x-full');
+                mobileDrawer.classList.remove('drawer-open');
+                drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+
+                mobileDrawer.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+                document.removeEventListener('keydown', trapFocus);
+
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                } else {
+                    mobileMenuBtn.focus();
+                }
+            }
+
+            function trapFocus(e) {
+                if (e.key === 'Escape') {
+                    closeDrawer();
+                    return;
+                }
+                if (e.key !== 'Tab') return;
+
+                const focusable = Array.from(getFocusableDrawerElements());
+                if (focusable.length === 0) return;
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', openDrawer);
+            closeDrawerBtn.addEventListener('click', closeDrawer);
+            drawerBackdrop.addEventListener('click', closeDrawer);
+
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            // ------------------------------------------------------------------
+            // 4. Auto-close drawer if window is resized up to desktop width
+            //    (fixes stuck-open-drawer edge case on orientation/resize)
+            // ------------------------------------------------------------------
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (window.innerWidth >= DESKTOP_BREAKPOINT &&
+                        !mobileDrawer.classList.contains('translate-x-full')) {
+                        closeDrawer();
+                    }
+                }, 150);
+            });
+        });
+
+        // Dynamic Year Script
+        const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
+        // Background Slider Script
+        const slides = document.querySelectorAll(".hero-slide");
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 5000);
+
+        // Typing Text Effect (Updated with Real Estate categories)
+        const words = [
+            "Luxury Villas",
+            "Premium Apartments",
+            "Commercial Spaces",
+            "Residential Plots",
+            "Investment Deals"
+        ];
+
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+
+        const typingText = document.getElementById("typing-text");
+
+        function type() {
+            if (!typingText) return;
+
+            currentWord = words[i];
+
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, j--);
+            } else {
+                typingText.textContent = currentWord.substring(0, j++);
+            }
+
+            if (!isDeleting && j === currentWord.length + 1) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+                return;
+            }
+
+            if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+            }
+
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+
+        type();
+
+        // ==================================================================
+        // PROJECT SEARCH + RESULT CARDS
+        // ==================================================================
+        // SAMPLE DATA — replace every field below with your real projects.
+        // area     : the neighborhood/locality name (e.g. "Vijay Nagar", "Sector 3")
+        // city     : the city name EXACTLY as users would search it
+        //            (e.g. "Indore", "Pithampur", "Ujjain", "Dewas")
+        // location : auto-built from area + city below, don't set manually
+        // type     : must exactly match a <select> option -> "Luxury Villa" | "Apartment" | "Plot"
+        // priceCategory : must exactly match a <select> option text, OR
+        //                 the widest option ("₹50L - ₹5Cr+") which always matches
+        // bhk      : number used for the "2+ BHK / 3+ BHK" filter
+        // status   : "available" | "limited" | "soldout"
+        // detailLink : the real URL of that project's own detail page
+        //
+        // HOW CITY-LEVEL SEARCH WORKS:
+        // Searching "Indore" matches EVERY project whose city is Indore,
+        // no matter which area/locality it's in — they all show together
+        // in one popup. Same for "Pithampur", "Ujjain", "Dewas", etc.
+        // Searching an area name (e.g. "Vijay Nagar") narrows it down to
+        // just that locality. So just keep "city" accurate for every
+        // project and city-wide search works automatically.
+        const RAW_PROJECTS = [
+            {
+                id: 'greenfield-estate',
+                name: 'Greenfield Estate',
+                area: 'Vijay Nagar',
+                city: 'Indore',
+                image: '../assets/image/bgimage4.png',
+                type: 'Luxury Villa',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.6,
+                status: 'available',
+                visitTime: '10:00 AM – 6:00 PM',
+                contactName: 'Rahul Sharma',
+                contactPhone: '+919876543210',
+                detailLink: 'project-details.html?id=greenfield-estate'
+            },
+            {
+                id: 'sunrise-residency',
+                name: 'Sunrise Residency',
+                area: 'Rajendra Nagar',
+                city: 'Indore',
+                image: '../assets/image/bgimage2.png',
+                type: 'Apartment',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 2,
+                rating: 4.3,
+                status: 'limited',
+                visitTime: '9:00 AM – 5:00 PM',
+                contactName: 'Priya Verma',
+                contactPhone: '+919876500001',
+                detailLink: 'project-details.html?id=sunrise-residency'
+            },
+            {
+                id: 'royal-orchid-plots',
+                name: 'Royal Orchid Plots',
+                area: 'Bypass Road',
+                city: 'Indore',
+                image: '../assets/image/unnamed.webp',
+                type: 'Plot',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 0,
+                rating: 4.1,
+                status: 'available',
+                visitTime: '10:00 AM – 7:00 PM',
+                contactName: 'Amit Joshi',
+                contactPhone: '+919876500002',
+                detailLink: 'project-details.html?id=royal-orchid-plots'
+            },
+            {
+                id: 'industrial-heights',
+                name: 'Industrial Heights',
+                area: 'Sector 3',
+                city: 'Pithampur',
+                image: '../assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png',
+                type: 'Plot',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 0,
+                rating: 4.4,
+                status: 'available',
+                visitTime: '9:30 AM – 6:00 PM',
+                contactName: 'Vikas Patel',
+                contactPhone: '+919876500003',
+                detailLink: 'project-details.html?id=industrial-heights'
+            },
+            {
+                id: 'pithampur-green-villas',
+                name: 'Pithampur Green Villas',
+                area: 'Sector 1',
+                city: 'Pithampur',
+                image: '../assets/image/bgimage4.png',
+                type: 'Luxury Villa',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.5,
+                status: 'soldout',
+                visitTime: '10:00 AM – 6:00 PM',
+                contactName: 'Neha Rathore',
+                contactPhone: '+919876500004',
+                detailLink: 'project-details.html?id=pithampur-green-villas'
+            },
+            {
+                id: 'blue-lagoon-apartments',
+                name: 'Blue Lagoon Apartments',
+                area: 'Rau',
+                city: 'Indore',
+                image: '../assets/image/bgimage2.png',
+                type: 'Apartment',
+                priceCategory: '₹50L - ₹1Cr',
+                bhk: 3,
+                rating: 4.2,
+                status: 'available',
+                visitTime: '9:00 AM – 6:00 PM',
+                contactName: 'Sanjay Malviya',
+                contactPhone: '+919876500005',
+                detailLink: 'project-details.html?id=blue-lagoon-apartments'
+            },
+            {
+                id: 'mahakal-vihar',
+                name: 'Mahakal Vihar',
+                area: 'Nanakheda',
+                city: 'Ujjain',
+                image: '../assets/image/bgimage4.png',
+                type: 'Apartment',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 2,
+                rating: 4.0,
+                status: 'available',
+                visitTime: '9:00 AM – 5:30 PM',
+                contactName: 'Deepak Trivedi',
+                contactPhone: '+919876500006',
+                detailLink: 'project-details.html?id=mahakal-vihar'
+            },
+            {
+                id: 'dewas-industrial-plots',
+                name: 'Dewas Industrial Plots',
+                area: 'AB Road',
+                city: 'Dewas',
+                image: '../assets/image/unnamed.webp',
+                type: 'Plot',
+                priceCategory: '₹20L - ₹50L',
+                bhk: 0,
+                rating: 4.2,
+                status: 'limited',
+                visitTime: '10:00 AM – 6:00 PM',
+                contactName: 'Ramesh Choudhary',
+                contactPhone: '+919876500007',
+                detailLink: 'project-details.html?id=dewas-industrial-plots'
+            }
+        ];
+
+        // location is always built as "Area, City" so both area-level search
+        // ("Vijay Nagar") and city-level search ("Indore") work correctly.
+        const PROJECTS = RAW_PROJECTS.map(p => ({
+            ...p,
+            location: `${p.area}, ${p.city}`
+        }));
+
+        const STATUS_BADGES = {
+            available: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700"><i class="fa-solid fa-circle-check"></i>Available</span>',
+            limited: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700"><i class="fa-solid fa-triangle-exclamation"></i>Limited Units</span>',
+            soldout: '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700"><i class="fa-solid fa-ban"></i>Sold Out</span>'
+        };
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderProjectCards(list) {
+            const grid = document.getElementById('results-grid');
+            const noResults = document.getElementById('no-results');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col';
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img src="${p.image}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover"
+                             onerror="this.style.display='none'">
+                        <div class="absolute top-3 left-3">${STATUS_BADGES[p.status] || ''}</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <div class="flex items-start justify-between gap-2">
+                            <h3 class="font-bold text-lg text-slate-900 leading-snug">${escapeHtml(p.name)}</h3>
+                            <div class="flex items-center gap-1 text-amber-500 text-sm font-semibold shrink-0 pt-0.5">
+                                <i class="fa-solid fa-star"></i>${p.rating}
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-1.5">
+                            <i class="fa-solid fa-location-dot text-blue-500 w-4"></i>${escapeHtml(p.location)}
+                        </p>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-2">
+                            <i class="fa-regular fa-clock text-blue-500 w-4"></i>Visit: ${escapeHtml(p.visitTime)}
+                        </p>
+                        <p class="text-sm text-slate-500 flex items-center gap-1.5 mt-2">
+                            <i class="fa-regular fa-user text-blue-500 w-4"></i>Contact: ${escapeHtml(p.contactName)}
+                        </p>
+                        <a href="${p.detailLink}"
+                           class="mt-4 inline-flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl transition-colors">
+                            View More Details<i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function runPropertySearch() {
+            const locationInput = document.getElementById('search-location');
+            const typeInput = document.getElementById('search-type');
+            const priceInput = document.getElementById('search-price');
+            const bedsInput = document.getElementById('search-beds');
+            if (!locationInput) return;
+
+            const locationQuery = locationInput.value.trim().toLowerCase();
+            const typeQuery = typeInput.value;
+            const priceQuery = priceInput.value;
+            const bedsQuery = bedsInput.value;
+
+            const filtered = PROJECTS.filter(p => {
+                const matchLocation = !locationQuery
+                    || p.city.toLowerCase().includes(locationQuery)
+                    || p.area.toLowerCase().includes(locationQuery)
+                    || p.location.toLowerCase().includes(locationQuery);
+                const matchType = typeQuery === 'Any Type' || p.type === typeQuery;
+                // The first price option is the widest range -> treat as "any price"
+                const matchPrice = priceQuery === '₹50L - ₹5Cr+' || p.priceCategory === priceQuery;
+                const matchBeds =
+                    bedsQuery === 'Any' ||
+                    (bedsQuery === '2+ BHK' && p.bhk >= 2) ||
+                    (bedsQuery === '3+ BHK' && p.bhk >= 3);
+                return matchLocation && matchType && matchPrice && matchBeds;
+            });
+
+            const label = document.getElementById('results-location-label');
+            const count = document.getElementById('results-count');
+            if (label) label.textContent = locationQuery ? `near "${locationInput.value.trim()}"` : '';
+            if (count) count.textContent = `${filtered.length} project${filtered.length !== 1 ? 's' : ''} found`;
+
+            renderProjectCards(filtered);
+            openResultsModal();
+        }
+
+        // ------------------------------------------------------------------
+        // RESULTS POPUP MODAL — open/close (same pattern as the mobile
+        // drawer above: backdrop fade, Escape to close, click outside to
+        // close, focus moves to the close button, and back to the search
+        // button once the popup is dismissed).
+        // ------------------------------------------------------------------
+        const resultsModal = document.getElementById('results-modal');
+        const resultsBackdrop = document.getElementById('results-backdrop');
+        const resultsModalClose = document.getElementById('results-modal-close');
+        let lastFocusedBeforeResultsModal = null;
+
+        function openResultsModal() {
+            lastFocusedBeforeResultsModal = document.activeElement;
+
+            resultsModal.classList.remove('opacity-0', 'invisible', 'pointer-events-none', 'scale-95');
+            resultsBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+
+            resultsModal.setAttribute('aria-hidden', 'false');
+            if (resultsModalClose) resultsModalClose.focus();
+
+            document.addEventListener('keydown', handleResultsModalEscape);
+        }
+
+        function closeResultsModal() {
+            resultsModal.classList.add('opacity-0', 'invisible', 'pointer-events-none', 'scale-95');
+            resultsBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+
+            resultsModal.setAttribute('aria-hidden', 'true');
+            document.removeEventListener('keydown', handleResultsModalEscape);
+
+            if (lastFocusedBeforeResultsModal) {
+                lastFocusedBeforeResultsModal.focus();
+            }
+        }
+
+        function handleResultsModalEscape(e) {
+            if (e.key === 'Escape') closeResultsModal();
+        }
+
+        if (resultsModalClose) resultsModalClose.addEventListener('click', closeResultsModal);
+        if (resultsBackdrop) resultsBackdrop.addEventListener('click', closeResultsModal);
+
+        // Intercept the search form so Enter / Search button never reloads
+        // the page — it filters the projects and opens the popup instead.
+        const propertySearchForm = document.getElementById('property-search-form');
+        if (propertySearchForm) {
+            propertySearchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                runPropertySearch();
+            });
+        }
+
     </script>
 </body>
 
