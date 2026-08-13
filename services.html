@@ -1,180 +1,2579 @@
-<section class="relative w-full min-h-screen overflow-hidden bg-black">
-    <!-- ================= BACKGROUND SLIDER ================= -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
-    <div class="absolute inset-0">
-        <!-- SLIDE 1 -->
-        <div class="hero-slide active">
-            <img src="onesideimagbg.png" alt="" class="hero-image" />
-        </div>
+<head>
+    <!-- =========================================================
+         BASIC SEO
+    ========================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- SLIDE 2 -->
-        <div class="hero-slide">
-            <img src="bgimage2.png" alt="" class="hero-image" />
-        </div>
+    <title>Real Estate Services in Indore | Buy, Sell, Rent & Invest | Mishra Property</title>
 
-        <!-- SLIDE 3 -->
-        <div class="hero-slide">
-            <img src="bulidingimage.png" alt="" class="hero-image" />
-        </div>
+    <meta name="description"
+        content="Mishra Property offers trusted real estate services in Indore including property buying, selling, renting, property valuation, home loan assistance and real estate investment consulting.">
 
-        <!-- OVERLAYS -->
-        <div
-            class="absolute inset-0 z-[2] pointer-events-none bg-[linear-gradient(115deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.25)_50%,rgba(0,0,0,0.1)_100%)]">
-        </div>
+    <meta name="keywords"
+        content="real estate services in Indore, property dealer in Indore, buy property in Indore, sell property in Indore, rent property in Indore, property consultant Indore, real estate consultant Indore, property valuation Indore, home loan assistance Indore, residential property Indore, commercial property Indore, property investment Indore">
 
-        <div
-            class="absolute inset-0 z-[3] pointer-events-none bg-[linear-gradient(to_top,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0)_70%)]">
-        </div>
+    <meta name="author" content="Mishra Property Indore">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
-        <!-- TOP GREEN GLOW -->
-        <div
-            class="absolute top-[-10%] left-[-5%] z-[2] pointer-events-none rounded-full w-[80%] h-[50%] blur-[60px] md:w-[65%] md:h-[65%] md:max-w-[800px] md:max-h-[800px] md:blur-[70px] bg-[radial-gradient(circle,rgba(0,141,106,0.28)_0%,rgba(16,185,129,0.12)_50%,transparent_80%)]">
-        </div>
+    <link rel="canonical" href="https://mishraproperty.com/services.html">
 
-        <!-- BOTTOM GREEN GLOW -->
-        <div
-            class="absolute bottom-0 right-0 z-[2] pointer-events-none w-[50%] h-[40%] blur-[60px] bg-[radial-gradient(ellipse_at_bottom_right,rgba(22,163,74,0.2),transparent_70%)]">
-        </div>
-    </div>
+    <!-- =========================================================
+         OPEN GRAPH
+    ========================================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Real Estate Services in Indore | Mishra Property">
+    <meta property="og:description"
+        content="Explore professional property buying, selling, renting, valuation and investment services in Indore with Mishra Property.">
+    <meta property="og:url" content="https://mishraproperty.com/services.html">
+    <meta property="og:site_name" content="Mishra Property Indore">
+    <meta property="og:image" content="https://mishraproperty.com/assets/images/services-og.jpg">
 
-    <!-- ================= CONTENT ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Real Estate Services in Indore | Mishra Property">
+    <meta name="twitter:description"
+        content="Professional real estate services for buying, selling, renting and investing in Indore.">
+    <meta name="twitter:image" content="https://mishraproperty.com/assets/images/services-og.jpg">
 
-    <div
-        class="relative z-30 min-h-screen flex items-start md:items-center max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-0">
+    <!-- =========================================================
+         FAVICON
+    ========================================================== -->
+    <link rel="icon" href="/assets/images/favicon.png">
 
-        <div class="max-w-3xl pt-5">
+    <!-- =========================================================
+         TAILWIND
+    ========================================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-            <!-- BADGE -->
-            <div
-                class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-amber-400/40 bg-amber-400/10 backdrop-blur-md shadow-lg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-                <div class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81'
+                        }
+                    },
+                    boxShadow: {
+                        luxury: '0 25px 70px rgba(15, 23, 42, 0.12)'
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(25px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-10px)'
+                            }
+                        }
+                    },
+                    animation: {
+                        fadeUp: 'fadeUp .8s ease forwards',
+                        float: 'float 4s ease-in-out infinite'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- =========================================================
+         STRUCTURED DATA
+    ========================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Mishra Property",
+        "url": "https://mishraproperty.com/",
+        "telephone": "+91-7987380096",
+        "description": "Mishra Property provides professional real estate services in Indore including property buying, selling, renting, valuation and investment consulting.",
+        "areaServed": {
+            "@type": "City",
+            "name": "Indore"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Indore",
+            "addressRegion": "Madhya Pradesh",
+            "addressCountry": "IN"
+        },
+        "serviceType": [
+            "Property Buying",
+            "Property Selling",
+            "Property Renting",
+            "Property Valuation",
+            "Home Loan Assistance",
+            "Real Estate Investment Consulting"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Real Estate Services in Indore",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Property Buying Services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Property Selling Services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Property Rental Services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Property Valuation"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Home Loan Assistance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Real Estate Investment Consulting"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .nav-link-underline {
+            position: relative;
+        }
+
+        .nav-link-underline::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transform: translateX(-50%);
+            transition: width .3s ease;
+        }
+
+        .nav-link-underline:hover::after,
+        .nav-link-underline.active::after {
+            width: 100%;
+        }
+
+        #main-header.header-hidden {
+            transform: translateY(-100%);
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(99, 102, 241, .06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, .06) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, .78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .service-card {
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 55px rgba(15, 23, 42, .12);
+        }
+
+        .service-icon {
+            transition: transform .35s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #6366f1;
+            outline-offset: 3px;
+        }
+
+
+
+
+        /* ================= CURLY DOTTED ARROW ANIMATION ================= */
+
+        .curly-dots {
+            animation: dotFlow 3s linear infinite;
+        }
+
+        .curly-arrow-head {
+            animation: arrowMove 2s ease-in-out infinite;
+        }
+
+        @keyframes dotFlow {
+            from {
+                stroke-dashoffset: 0;
+            }
+
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+
+        @keyframes arrowMove {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(3px, 3px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- HEADER
+    ========================================================== -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 h-[72px] sm:h-[80px] lg:h-[88px]
+        bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm
+        transition-transform duration-300">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full">
+
+            <div class="flex items-center justify-between h-full">
+
+                <!-- LOGO -->
+
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Mishra Property Indore Home">
+
+                    <div class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl
+                        bg-gradient-to-tr from-indigo-600 via-violet-600 to-indigo-400
+                        flex items-center justify-center text-white
+                        shadow-lg shadow-indigo-500/30
+                        group-hover:scale-105 transition-transform">
+
+                        <i class="fa-solid fa-house text-lg"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="block font-bold text-lg lg:text-xl tracking-tight text-slate-900">
+                            Mishra Property
+                        </span>
+
+                        <span class="block text-[10px] tracking-widest uppercase
+                            font-semibold text-slate-500">
+                            Indore • Real Estate
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <!-- DESKTOP NAV -->
+
+                <nav class="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
+
+                    <a href="index.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        Home
+                    </a>
+
+                    <a href="about.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        About
+                    </a>
+
+                    <a href="properties.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        Properties
+                    </a>
+
+                    <a href="projects.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        Projects
+                    </a>
+
+                    <a href="services.html" class="nav-link-underline active text-indigo-600 text-sm font-semibold">
+                        Services
+                    </a>
+
+                    <a href="gallery.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        Gallery
+                    </a>
+
+                    <a href="contact.html"
+                        class="nav-link-underline text-slate-700 hover:text-indigo-600 text-sm font-medium">
+                        Contact
+                    </a>
+
+                </nav>
+
+                <!-- DESKTOP CTA -->
+
+                <div class="hidden lg:flex items-center gap-5">
+
+                    <a href="tel:+917987380096" class="flex items-center gap-2 text-sm font-semibold text-slate-700
+                        hover:text-indigo-600">
+
+                        <span class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center">
+
+                            <i class="fa-solid fa-phone text-sm"></i>
+
+                        </span>
+
+                        <span>+91 7987380096</span>
+
+                    </a>
+
+                    <a href="contact.html" class="px-6 py-3 rounded-full text-sm font-semibold text-white
+                        bg-gradient-to-r from-indigo-600 to-violet-600
+                        shadow-lg shadow-indigo-500/20
+                        hover:shadow-xl hover:scale-[1.02] transition-all">
+
+                        Book Site Visit
+
+                    </a>
+
                 </div>
 
-                <span class="text-sm font-semibold tracking-wide text-amber-300 uppercase">
-                    🏡 Trusted Real Estate Company Since 2015
+                <!-- MOBILE -->
+
+                <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 rounded-xl bg-slate-100
+                    flex items-center justify-center text-slate-700" aria-label="Open menu">
+
+                    <i class="fa-solid fa-bars text-lg"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60]
+        opacity-0 pointer-events-none transition-opacity lg:hidden">
+    </div>
+
+    <aside id="mobile-drawer" class="fixed top-0 right-0 z-[70] w-[320px] max-w-[88vw] h-full
+        bg-white translate-x-full transition-transform duration-300
+        lg:hidden flex flex-col">
+
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600
+                    text-white flex items-center justify-center">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+                <span class="font-bold text-slate-900">
+                    Mishra Property
                 </span>
 
             </div>
 
-            <!-- HEADING -->
-            <h1
-                class="mt-6 md:mt-8 text-[2.5rem] sm:text-5xl lg:text-7xl font-black leading-[0.95] tracking-tight text-white">
+            <button id="close-drawer-btn" class="w-9 h-9 rounded-full bg-slate-100 text-slate-600">
 
-                Find Your
+                <i class="fa-solid fa-xmark"></i>
 
-                <span
-                    class="block bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                    Dream Property
-                </span>
+            </button>
 
-                in Indore
+        </div>
 
-            </h1>
+        <nav class="p-5 flex-1 space-y-1">
 
-            <!-- SUB HEADING -->
-            <div class="mt-5">
+            <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                Home
+            </a>
 
-                <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-amber-300 flex flex-wrap items-center gap-1">
+            <a href="about.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                About
+            </a>
 
-                    Your Trusted Partner For:&nbsp;
+            <a href="properties.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                Properties
+            </a>
 
-                    <span id="typing-text"
-                        class="font-semibold bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent typing-cursor pr-1">
+            <a href="projects.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                Projects
+            </a>
+
+            <a href="services.html" class="block px-4 py-3 rounded-xl bg-indigo-50 text-indigo-600 font-semibold">
+                Services
+            </a>
+
+            <a href="gallery.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                Gallery
+            </a>
+
+            <a href="contact.html" class="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="p-5 bg-slate-50 space-y-3">
+
+            <a href="tel:+917987380096" class="w-full flex items-center justify-center gap-2
+                py-3 rounded-xl bg-white border border-slate-200 font-semibold">
+
+                <i class="fa-solid fa-phone text-indigo-600"></i>
+                Call Us
+
+            </a>
+
+            <a href="https://wa.me/917987380096" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2
+                py-3 rounded-xl bg-emerald-50 border border-emerald-200
+                text-emerald-700 font-semibold">
+
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp
+
+            </a>
+
+            <a href="contact.html" class="w-full flex items-center justify-center
+                py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600
+                text-white font-semibold">
+
+                Book Site Visit
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <main>
+
+        <!--  HERO-->
+        <section class="relative pt-32 sm:pt-36 lg:pt-40 pb-20 lg:pb-28
+            overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+            <!-- Background -->
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/image/servicepGEBGimage.png" alt="Real Estate Background"
+                    class="h-full w-full object-cover object-center scale-105 transition-transform duration-1000" />
+
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+                <div class="max-w-4xl mx-auto text-center">
+
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                        bg-blue-50 border border-indigo-100
+                        text-blue-700 text-xs sm:text-sm font-bold mb-6">
+
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse">
+                        </span>
+
+                        Trusted Real Estate Services in Indore
+
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl
+                        font-black tracking-tight text-slate-900 leading-[1.05]">
+
+                        Complete Real Estate
+                        <span class="block bg-gradient-to-r from-blue-600
+                            via-blue-700 to-indigo-500
+                            bg-clip-text text-transparent">
+                            Services in Indore
+                        </span>
+
+                    </h1>
+
+                    <p class="mt-6 text-base sm:text-lg lg:text-xl
+                        text-slate-600 max-w-3xl mx-auto leading-relaxed">
+
+                        From finding the right property to selling,
+                        renting and investing with confidence,
+                        <strong class="text-slate-800">
+                            Mishra Property
+                        </strong>
+                        provides end-to-end real estate solutions
+                        for residential and commercial properties in Indore.
+
+                    </p>
+
+                    <div class="mt-9 flex flex-col sm:flex-row
+                        items-center justify-center gap-4">
+
+                        <a href="properties.html" class="w-full sm:w-auto inline-flex items-center
+                            justify-center gap-2 px-7 py-3.5 rounded-full
+                            bg-gradient-to-r from-blue-700 to-blue-600
+                            text-white font-bold shadow-xl
+                            shadow-indigo-500/20 hover:scale-[1.02]
+                            transition-all">
+
+                            Explore Properties
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                        <a href="contact.html" class="w-full sm:w-auto inline-flex items-center
+                            justify-center gap-2 px-7 py-3.5 rounded-full
+                            bg-white border border-slate-200
+                            text-slate-800 font-bold
+                            hover:border-blue-500 hover:text-blue-600
+                            transition-all">
+
+                            Talk to a Property Expert
+
+                            <i class="fa-regular fa-comments"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--  TRUST STRIP -->
+        <section class="relative -mt-8 z-10 px-5 sm:px-6 lg:px-8">
+
+            <div class="max-w-6xl mx-auto glass-card rounded-3xl
+                border border-white shadow-luxury p-5 sm:p-7">
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                    <div class="text-center">
+
+                        <div class="text-2xl font-black text-blue-700">
+                            30+
+                        </div>
+
+                        <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                            Years of Experience
+                        </div>
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <div class="text-2xl font-black text-blue-700">
+                            500+
+                        </div>
+
+                        <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                            Property Consultations
+                        </div>
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <div class="text-2xl font-black text-blue-700">
+                            100%
+                        </div>
+
+                        <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                            Personalized Guidance
+                        </div>
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <div class="text-2xl font-black text-blue-700">
+                            Indore
+                        </div>
+
+                        <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                            Local Market Expertise
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--  SERVICES INTRO  -->
+        <section class="relative py-20 lg:py-28 bg-white overflow-hidden">
+
+            <!-- ================= DECORATIVE CURLY ARROWS ================= -->
+
+            <!-- Decorative Curly Dotted Arrow - Left -->
+            <div class="absolute left-4 lg:left-10 top-24 w-44 h-44 z-0
+            pointer-events-none hidden md:block">
+
+                <svg viewBox="0 0 180 180" class="w-full h-full overflow-visible">
+
+                    <!-- Curly dotted line -->
+                    <path d="M25 35
+               C65 5, 125 15, 135 55
+               C145 92, 112 112, 78 100
+               C48 89, 45 58, 67 48
+               C88 38, 105 55, 98 73
+               C91 91, 63 98, 45 115
+               C32 128, 35 145, 58 151" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"
+                        stroke-dasharray="1 9" class="curly-dots">
+                    </path>
+
+                    <!-- Arrow head -->
+                    <path d="M58 151
+               L47 139
+               M58 151
+               L42 153" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="curly-arrow-head">
+                    </path>
+
+                </svg>
+
+            </div>
+
+            <!-- RIGHT CURLY DOTTED ARROW - MIRROR OF LEFT -->
+            <div class="absolute right-4 lg:right-10 top-24 w-44 h-44 z-0
+            pointer-events-none hidden md:block">
+
+                <svg viewBox="0 0 180 180" class="w-full h-full overflow-visible" style="transform: scaleX(-1);">
+
+                    <!-- Same curly dotted arrow -->
+                    <path d="M25 35
+               C65 5, 125 15, 135 55
+               C145 92, 112 112, 78 100
+               C48 89, 45 58, 67 48
+               C88 38, 105 55, 98 73
+               C91 91, 63 98, 45 115
+               C32 128, 35 145, 58 151" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"
+                        stroke-dasharray="1 9" class="curly-dots">
+                    </path>
+
+                    <!-- Arrow Head -->
+                    <path d="M58 151
+               L47 139
+               M58 151
+               L42 153" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="curly-arrow-head">
+                    </path>
+
+                </svg>
+
+            </div>
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+                <div class="max-w-3xl mx-auto text-center reveal">
+
+                    <span class="text-blue-600 font-bold text-sm uppercase tracking-widest">
+                        Our Services
                     </span>
 
-                </h2>
+                    <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl
+                        font-black text-slate-900 tracking-tight">
+
+                        Everything You Need
+                        <span class="text-blue-700">
+                            Under One Roof
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed">
+
+                        Whether you are buying your first home,
+                        selling an existing property, looking for a rental,
+                        or planning a long-term real estate investment,
+                        our team helps simplify every step.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICE CARDS -->
+                <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+
+                    <!-- BUY card 1-->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="https://i.pinimg.com/736x/73/18/c0/7318c0694f6738116f6755790cdcc4c1.jpg"
+                                    alt="Property Buying Services in Indore"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+
+                            </div>
+
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+
+                                <div
+                                    class="service-icon w-11 h-11 shrink-0 rounded-2xl bg-indigo-50 text-blue-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-house-circle-check"></i>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-blue-600">
+                                    Property Buying Services
+                                </h3>
+
+                            </div>
+                            <!--description-->
+                            <p class="mt-4 text-slate-600 leading-relaxed text-sm">
+                                Find residential and commercial properties in Indore that match your location, budget,
+                                lifestyle and investment goals.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                                    Property shortlisting
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                                    Location guidance
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                                    Property comparison
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-indigo-600 font-bold text-sm hover:underline">
+                            Find Your Property
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- SELL card 2 -->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="https://i.pinimg.com/736x/09/71/d5/0971d56387d8d6a1dde5190bae120ff2.jpg"
+                                    alt="Property Buying"
+                                    class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+
+
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="service-icon w-11 h-11 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-house-chimney-window"></i>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-violet-700">
+                                    Property Selling Services
+                                </h3>
+                            </div>
+
+
+                            <p class="mt-3 text-slate-600 leading-relaxed text-sm">
+                                Get professional assistance to position, market and sell your property efficiently while
+                                reaching suitable buyers.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-violet-600 mt-1"></i>
+                                    Property assessment
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-violet-600 mt-1"></i>
+                                    Buyer coordination
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-violet-600 mt-1"></i>
+                                    Negotiation support
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-violet-600 font-bold text-sm hover:underline">
+                            Sell Your Property
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- RENT card 3-->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="https://i.pinimg.com/736x/ef/f9/3e/eff93e588d094b66795e48d6b03279a9.jpg"
+                                    alt="Property Buying"
+                                    class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="service-icon w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-emerald-700">
+                                    Rental & Leasing Services
+                                </h3>
+
+                            </div>
+
+                            <p class="mt-3 text-slate-600 leading-relaxed text-sm">
+                                Explore residential and commercial rental opportunities across popular areas of Indore.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    Rental property search
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    Tenant coordination
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    Lease assistance
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-emerald-600 font-bold text-sm hover:underline">
+                            Find Rental Property
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- VALUATION -->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="/assets/image/3f066380-9753-4b00-8863-06a9121e3d4b.png" alt="Property Buying"
+                                    class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="service-icon w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-amber-700">
+                                    Property Valuation
+                                </h3>
+                            </div>
+
+
+                            <p class="mt-3 text-slate-600 leading-relaxed text-sm">
+                                Understand the potential market value of your residential or commercial property before
+                                making an important decision.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-amber-600 mt-1"></i>
+                                    Local market comparison
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-amber-600 mt-1"></i>
+                                    Location analysis
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-amber-600 mt-1"></i>
+                                    Pricing guidance
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-amber-600 font-bold text-sm hover:underline">
+                            Request Valuation
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- HOME LOAN -->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="https://i.pinimg.com/736x/2b/02/a5/2b02a5ba220679968905af5beb9ab582.jpg"
+                                    alt="Property Buying"
+                                    class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="service-icon w-11 h-11 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+
+                                <h3 class=" text-xl font-extrabold text-cyan-700">
+                                    Home Loan Assistance
+                                </h3>
+                            </div>
+
+
+                            <p class="mt-3 text-slate-600 leading-relaxed text-sm">
+                                Get guidance on understanding your home financing options and preparing for the property
+                                purchase process.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-cyan-600 mt-1"></i>
+                                    Financing guidance
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-cyan-600 mt-1"></i>
+                                    Documentation guidance
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-cyan-600 mt-1"></i>
+                                    Purchase planning
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-cyan-600 font-bold text-sm hover:underline">
+                            Discuss Financing
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- INVESTMENT -->
+                    <article
+                        class="service-card reveal overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 lg:p-8 flex flex-col justify-between">
+                        <div>
+                            <!-- Image Added at Top -->
+                            <div class="h-[280px] w-full -mt-7 -mx-7 mb-6 overflow-hidden rounded-t-3xl border-b border-slate-100"
+                                style="width: calc(100% + 3.5rem);">
+                                <img src="/assets/image/8201bd2e-2a0e-46ad-9a50-7c6edf48963d.png" alt="Property Buying"
+                                    class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+
+                            <!-- icons sectiona -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="service-icon w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-rose-700">
+                                    Real Estate Investment Consulting
+                                </h3>
+                            </div>
+
+
+                            <p class="mt-4 text-slate-600 leading-relaxed text-sm">
+                                Explore property opportunities with a focus on location, potential demand, budget and
+                                your long-term investment objectives.
+                            </p>
+
+                            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-rose-600 mt-1"></i>
+                                    Location evaluation
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-rose-600 mt-1"></i>
+                                    Investment comparison
+                                </li>
+                                <li class="flex gap-2">
+                                    <i class="fa-solid fa-check text-rose-600 mt-1"></i>
+                                    Long-term planning
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 mt-7 text-rose-600 font-bold text-sm hover:underline">
+                            Talk to an Expert
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!--  PROPERTY TYPES -->
+        <section class="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div class="reveal">
+
+                        <span class="text-indigo-600 font-bold text-sm uppercase tracking-widest">
+                            Property Solutions
+                        </span>
+
+                        <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl
+                            font-black text-slate-900 leading-tight">
+
+                            Residential & Commercial
+                            <span class="text-indigo-600">
+                                Property Services
+                            </span>
+
+                        </h2>
+
+                        <p class="mt-5 text-slate-600 leading-relaxed">
+
+                            Our services cover a wide range of property
+                            requirements in Indore, helping buyers,
+                            sellers, tenants, landlords and investors
+                            make informed real estate decisions.
+
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+
+                            <div class="flex gap-4 p-4 rounded-2xl bg-white border border-slate-200">
+
+                                <div class="w-11 h-11 shrink-0 rounded-xl
+                                    bg-indigo-50 text-indigo-600
+                                    flex items-center justify-center">
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold text-slate-900">
+                                        Residential Properties
+                                    </h3>
+
+                                    <p class="text-sm text-slate-500 mt-1">
+                                        Villas, apartments, flats, independent
+                                        houses and residential plots.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="flex gap-4 p-4 rounded-2xl bg-white border border-slate-200">
+
+                                <div class="w-11 h-11 shrink-0 rounded-xl
+                                    bg-violet-50 text-violet-600
+                                    flex items-center justify-center">
+
+                                    <i class="fa-solid fa-building"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold text-slate-900">
+                                        Commercial Properties
+                                    </h3>
+
+                                    <p class="text-sm text-slate-500 mt-1">
+                                        Offices, shops, retail spaces,
+                                        commercial plots and investment properties.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="relative reveal">
+
+                        <div class="rounded-[2rem] overflow-hidden
+                            bg-gradient-to-br from-indigo-600
+                            via-violet-600 to-indigo-900
+                            p-8 sm:p-10 text-white shadow-2xl">
+
+                            <div class="absolute top-0 right-0 w-48 h-48
+                                bg-white/10 rounded-full blur-2xl">
+                            </div>
+
+                            <div class="relative">
+
+                                <span class="inline-flex w-12 h-12 rounded-2xl
+                                    bg-white/10 items-center justify-center">
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                </span>
+
+                                <h3 class="mt-7 text-2xl sm:text-3xl font-black">
+                                    Local Expertise.
+                                    Better Decisions.
+                                </h3>
+
+                                <p class="mt-4 text-indigo-100 leading-relaxed">
+
+                                    We focus on understanding Indore's
+                                    property market, neighbourhoods,
+                                    connectivity and property requirements
+                                    so you can make decisions with greater confidence.
+
+                                </p>
+
+                                <div class="mt-8 grid grid-cols-2 gap-4">
+
+                                    <div class="rounded-2xl bg-white/10 border border-white/10 p-5">
+
+                                        <div class="text-2xl font-black">
+                                            6+
+                                        </div>
+
+                                        <div class="text-xs text-indigo-100 mt-1">
+                                            Core Services
+                                        </div>
+
+                                    </div>
+
+                                    <div class="rounded-2xl bg-white/10 border border-white/10 p-5">
+
+                                        <div class="text-2xl font-black">
+                                            360°
+                                        </div>
+
+                                        <div class="text-xs text-indigo-100 mt-1">
+                                            Property Guidance
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <a href="contact.html" class="mt-8 inline-flex items-center gap-2
+                                    px-6 py-3 rounded-full bg-white
+                                    text-indigo-700 font-bold
+                                    hover:scale-[1.02] transition">
+
+                                    Get Property Guidance
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <!-- FEATURES -->
-            <div class="flex flex-wrap items-center gap-4 mt-6 text-gray-200 text-sm md:text-base">
+        </section>
 
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-house text-amber-400"></i>
-                    Luxury Villas
-                </span>
-
-                <span class="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-building text-amber-400"></i>
-                    Premium Apartments
-                </span>
-
-                <span class="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-map-location-dot text-amber-400"></i>
-                    Residential & Commercial Plots
-                </span>
-
-            </div>
-
-            <!-- DESCRIPTION -->
-            <p
-                class="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-gray-100 max-w-2xl leading-relaxed md:leading-9 border-l-2 border-amber-400/70 pl-4 md:pl-5">
-
-                Helping families and investors discover premium homes, luxury villas,
-                commercial spaces, apartments, and residential plots across Indore with
-                complete transparency, verified properties, and expert real estate
-                guidance.
-
-            </p>
-
-            <!-- BUTTONS -->
-            <div class="mt-10 flex flex-wrap gap-5">
-
-                <!-- PRIMARY -->
-                <a href="properties.html"
-                    class="group inline-flex items-center gap-3 px-8 h-[62px] rounded-2xl text-black font-semibold bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 shadow-[0_15px_45px_rgba(251,191,36,0.35)] hover:scale-105 hover:shadow-[0_20px_55px_rgba(251,191,36,0.45)] transition-all duration-500">
-
-                    Explore Projects
-
-                    <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1">
-                    </i>
-
-                </a>
-
-                <!-- SECONDARY -->
-                <a href="contact.html"
-                    class="px-8 h-[62px] inline-flex items-center rounded-2xl border border-white/30 bg-white/10 backdrop-blur-xl text-white font-medium hover:bg-white hover:text-black transition-all duration-300">
-
-                    Contact Us
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-
-
-<main class="pt-20 px-1">
-
-    <!-- HERO SECTION -->
-    <section class="relative w-full min-h-screen bg-slate-50 overflow-hidden">
-        <!-- ================= BACKGROUND SLIDER ================= -->
-
-        <div class="absolute inset-0">
-            <!-- SLIDE 1 -->
-            <div class="hero-slide active">
-                <img src="pexels-house-1867187_1920.jpg" alt="" class="hero-image" />
-            </div>
-
-            <!-- SLIDE 2 -->
-            <div class="hero-slide">
-                <img src="/Gemini_Generated_Image_raieopraieopraie.png" alt="" class="hero-image" />
-            </div>
-
-            <!-- SLIDE 3 -->
-            <div class="hero-slide">
-                <img src="/unnamed.webp" alt="" class="hero-image" />
+        <!-- LOCAL SEO SECTION (MP Projects Highlighted) -->
+        <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <!-- Ambient Background Lighting -->
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-50/60 rounded-full blur-3xl pointer-events-none">
             </div>
             <div
-                className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:from-white md:via-white/60 lg:via-white/30 to-transparent" />
+                class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-50/60 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+
+                    <!-- Left Content Column (6 Cols) -->
+                    <div class="lg:col-span-6 reveal">
+                        <!-- Category Badge -->
+                        <span
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-600 border border-blue-100/80 shadow-sm">
+                            <i class="fa-solid fa-map-location-dot text-blue-600"></i>
+                            Madhya Pradesh Real Estate
+                        </span>
+
+                        <!-- Heading -->
+                        <h2
+                            class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                            Your Trusted Property Partner Across <span
+                                class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Indore
+                                & MP</span>
+                        </h2>
+
+                        <!-- Description Paragraphs -->
+                        <div class="mt-6 space-y-4 text-slate-600 text-base leading-relaxed">
+                            <p>
+                                Looking for reliable <strong class="text-slate-900 font-semibold">real estate services
+                                    in MP & Indore region</strong>? Mishra Property helps buyers, sellers, tenants, and
+                                investors navigate prime plots and residential townships with complete transparency.
+                            </p>
+                            <p class="text-slate-500 text-sm">
+                                From flagship township projects on Ujjain Road and AB Road to industrial hub investments
+                                in Pithampur—we provide end-to-end guidance for plots, homes, and commercial spaces.
+                            </p>
+                        </div>
+
+                        <!-- Strategic Service Highlights -->
+                        <div class="mt-8 grid sm:grid-cols-2 gap-4 border-t border-b border-slate-100 py-6">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fa-solid fa-map"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-slate-400 uppercase">Locations</p>
+                                    <p class="text-sm font-bold text-slate-800">Ujjain Rd, AB Rd, Pithampur</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-slate-400 uppercase">Assurance</p>
+                                    <p class="text-sm font-bold text-slate-800">100% Legal & Approved Plots</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Chips / Micro-Markets -->
+                        <div class="mt-8">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3.5">
+                                Key Hubs We Serve
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Vijay Nagar
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Super Corridor
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Nipania
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Rau
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Bicholi Mardana
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> AB Road
+                                </span>
+                                <span
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 border border-slate-200/80 text-xs font-semibold text-slate-700 transition-all cursor-default inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-blue-500 text-[10px]"></i> Scheme No. 140
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Prime Projects & Locations Showcase (6 Cols Light Card) -->
+                    <div class="lg:col-span-6 reveal">
+                        <div
+                            class="bg-slate-50/80 backdrop-blur-md border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/40 relative overflow-hidden">
+
+                            <!-- Header with MP Badge -->
+                            <div class="flex items-center justify-between border-b border-slate-200/80 pb-5 mb-6">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600">Featured
+                                        Townships & Plots</span>
+                                    <h3 class="text-xl font-bold text-slate-900 mt-0.5">Prime Projects in MP</h3>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-md shadow-blue-500/20">
+                                    <i class="fa-solid fa-location-crosshairs text-[10px]"></i> MP Region
+                                </span>
+                            </div>
+
+                            <!-- Project List Accordion / Grouped View -->
+                            <div class="space-y-4">
+
+                                <!-- Group 1: AB Road (Mangliya) -->
+                                <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm">
+                                    <div
+                                        class="flex items-center gap-2 mb-2.5 text-xs font-extrabold uppercase text-slate-400 tracking-wider">
+                                        <i class="fa-solid fa-route text-blue-600"></i> AB Road (Mangliya)
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-2">
+                                        <div
+                                            class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <i class="fa-solid fa-tree text-emerald-600 text-xs"></i>
+                                            <span class="text-xs font-bold text-slate-800">Highway Blossom</span>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <i class="fa-solid fa-city text-blue-600 text-xs"></i>
+                                            <span class="text-xs font-bold text-slate-800">Highway Serene City 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 2: Ujjain Road Projects -->
+                                <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm">
+                                    <div class="flex items-center justify-between mb-2.5">
+                                        <span
+                                            class="flex items-center gap-2 text-xs font-extrabold uppercase text-slate-400 tracking-wider">
+                                            <i class="fa-solid fa-road text-indigo-600"></i> Ujjain Road Belt
+                                        </span>
+                                        <span
+                                            class="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">High
+                                            Demand</span>
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-2">
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-gem text-indigo-600 text-[10px]"></i> Highway
+                                                Oasis
+                                            </div>
+                                            <p class="text-[10px] text-slate-500 mt-0.5">Bajrang Paliya (Near Prestige
+                                                Univ.)</p>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-landmark text-indigo-600 text-[10px]"></i> Highway
+                                                Landmark
+                                            </div>
+                                            <p class="text-[10px] text-slate-500 mt-0.5">Dharampuri Ujjain Road</p>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-signs-post text-indigo-600 text-[10px]"></i>
+                                                Highway Avenue
+                                            </div>
+                                            <p class="text-[10px] text-slate-500 mt-0.5">Dharampuri Main Road Touch</p>
+                                        </div>
+                                        <div class="bg-indigo-50/70 p-2.5 rounded-xl border border-indigo-100">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-xs font-bold text-indigo-950">Highway Trident</span>
+                                                <span
+                                                    class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-indigo-600 text-white">New</span>
+                                            </div>
+                                            <p class="text-[10px] text-indigo-700 mt-0.5">Newly Launched Colony</p>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-hospital text-rose-500 text-[10px]"></i> Highway
+                                                Season
+                                            </div>
+                                            <p class="text-[10px] text-slate-500 mt-0.5">Near New Aurobindo Hospital</p>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-sun text-amber-500 text-[10px]"></i> Highway Aura
+                                            </div>
+                                            <p class="text-[10px] text-slate-500 mt-0.5">Dharampuri Ujjain Road</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 3: Pithampur Industrial Belt -->
+                                <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm">
+                                    <div
+                                        class="flex items-center gap-2 mb-2 text-xs font-extrabold uppercase text-slate-400 tracking-wider">
+                                        <i class="fa-solid fa-industry text-amber-600"></i> Pithampur Region
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between bg-amber-50/60 p-3 rounded-xl border border-amber-100">
+                                        <div>
+                                            <span class="text-xs font-bold text-slate-900 block">Highway Summit</span>
+                                            <span class="text-[10px] text-slate-500">Prime plots in Pithampur hub</span>
+                                        </div>
+                                        <span
+                                            class="text-xs font-bold text-amber-700 bg-amber-100/80 px-2.5 py-1 rounded-lg">Industrial
+                                            Corridor</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCAL SEO SECTION (Google Maps Integrated) -->
+        <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+                    <!-- Left Side: Interactive Project Selectors -->
+                    <div class="lg:col-span-5 reveal space-y-6">
+                        <div>
+                            <span
+                                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-red-50 text-rose-600 border border-red-100">
+                                <i class="fa-solid fa-location-dot text-rose-600 animate-bounce"></i> Google Maps View
+                            </span>
+                            <h2 class="mt-3 text-3xl font-black text-slate-900 tracking-tight">
+                                Our Prime Township Locations
+                            </h2>
+                            <p class="mt-2 text-sm text-slate-500">
+                                Select any project to view its exact live location on Google Maps.
+                            </p>
+                        </div>
+
+                        <!-- Projects List Filterable Tabs -->
+                        <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+
+                            <!-- AB Road Group -->
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                                <span class="text-xs font-extrabold uppercase text-blue-600 tracking-wider block mb-2">
+                                    <i class="fa-solid fa-route"></i> AB Road (Mangliya)
+                                </span>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <button onclick="updateGoogleMap('Highway+Blossom+Mangliya+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Blossom</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+                                    <button onclick="updateGoogleMap('Highway+Serene+City+Mangliya+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Serene City 2</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Ujjain Road Group -->
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                                <span
+                                    class="text-xs font-extrabold uppercase text-indigo-600 tracking-wider block mb-2">
+                                    <i class="fa-solid fa-road"></i> Ujjain Road Belt
+                                </span>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <button onclick="updateGoogleMap('Prestige+University+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <div>
+                                            <span
+                                                class="text-xs font-bold text-slate-800 block group-hover:text-rose-600">Highway
+                                                Oasis</span>
+                                            <span class="text-[10px] text-slate-400">Bajrang Paliya (Near Prestige
+                                                Univ.)</span>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+
+                                    <button onclick="updateGoogleMap('Dharampuri+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Landmark</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+
+                                    <button onclick="updateGoogleMap('Dharampuri+Main+Road+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Avenue</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+
+                                    <button onclick="updateGoogleMap('Dharampuri+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-rose-500 text-white border border-rose-600 hover:bg-rose-600 transition flex justify-between items-center group">
+                                        <div>
+                                            <span class="text-xs font-bold block">Highway Trident</span>
+                                            <span class="text-[9px] text-rose-100">Newly Launched Colony</span>
+                                        </div>
+                                        <span
+                                            class="text-[9px] uppercase font-black bg-white text-rose-600 px-2 py-0.5 rounded">New</span>
+                                    </button>
+
+                                    <button onclick="updateGoogleMap('SAIMS+Hospital+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Season</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+
+                                    <button onclick="updateGoogleMap('Dharampuri+Ujjain+Road+Indore')"
+                                        class="map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                        <span class="text-xs font-bold text-slate-800 group-hover:text-rose-600">Highway
+                                            Aura</span>
+                                        <i
+                                            class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Pithampur Group -->
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                                <span class="text-xs font-extrabold uppercase text-amber-600 tracking-wider block mb-2">
+                                    <i class="fa-solid fa-industry"></i> Pithampur Belt
+                                </span>
+                                <button onclick="updateGoogleMap('Pithampur+Industrial+Area+Indore')"
+                                    class="w-full map-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 transition flex justify-between items-center group">
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-slate-800 group-hover:text-rose-600 block">Highway
+                                            Summit</span>
+                                        <span class="text-[10px] text-slate-400">Pithampur Industrial Hub</span>
+                                    </div>
+                                    <i
+                                        class="fa-solid fa-location-dot text-slate-400 group-hover:text-rose-600 text-xs"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Live Google Map Frame -->
+                    <div class="lg:col-span-7 reveal sticky top-24">
+                        <div class="bg-white border border-slate-200 rounded-3xl p-4 shadow-xl relative">
+
+                            <!-- Google Map Header -->
+                            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-map-location-dot text-rose-600"></i>
+                                    <span id="current-location-label" class="text-xs font-bold text-slate-900">
+                                        Google Map: All Key Hubs Highlighted
+                                    </span>
+                                </div>
+                                <button onclick="resetGoogleMap()"
+                                    class="text-[11px] font-semibold text-rose-600 hover:underline">
+                                    Reset Map View
+                                </button>
+                            </div>
+
+                            <!-- Google Maps iFrame -->
+                            <div
+                                class="relative w-full h-[520px] rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
+                                <iframe id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=Indore+Ujjain+Road+Mangliya+Pithampur&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                                    class="w-full h-full border-0" allowfullscreen="" loading="lazy">
+                                </iframe>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <script>
+            // Update Google Map Location On Click
+            function updateGoogleMap(searchQuery) {
+                const mapIframe = document.getElementById('gmap_canvas');
+                const formattedQuery = encodeURIComponent(searchQuery);
+                mapIframe.src = `https://maps.google.com/maps?q=${formattedQuery}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
+                // Update Status Label
+                const cleanName = searchQuery.replace(/\+/g, ' ');
+                document.getElementById('current-location-label').innerText = `Google Map Pin: ${cleanName}`;
+            }
+
+            // Reset Map View
+            function resetGoogleMap() {
+                const mapIframe = document.getElementById('gmap_canvas');
+                mapIframe.src = "https://maps.google.com/maps?q=Indore+Ujjain+Road+Mangliya+Pithampur&t=&z=10&ie=UTF8&iwloc=&output=embed";
+                document.getElementById('current-location-label').innerText = "Google Map: All Key Hubs Highlighted";
+            }
+        </script>
+
+        <!-- HOW IT WORKS (Light SaaS Theme)-->
+        <section class="py-20 lg:py-28 bg-slate-50/50 relative overflow-hidden">
+            <!-- Ambient Background Lighting -->
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none overflow-hidden">
+                <div class="absolute -top-40 left-1/4 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 right-10 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto reveal">
+                    <span
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-blue-50 text-blue-600 border border-blue-100/80 shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                        Our Process
+                    </span>
+
+                    <h2
+                        class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                        Simple Steps. <br class="hidden sm:block" />
+                        <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                            Smarter Property Decisions.
+                        </span>
+                    </h2>
+                    <p class="mt-4 text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
+                        Navigating real estate made seamless—from your initial wishlist to final paperwork.
+                    </p>
+                </div>
+
+                <!-- Steps Cards Grid -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Desktop Connector Line -->
+                    <div
+                        class="hidden lg:block absolute top-1/2 left-12 right-12 h-0.5 -translate-y-12 bg-gradient-to-r from-blue-200 via-indigo-200 to-slate-200 z-0">
+                    </div>
+
+                    <!-- Step 01 -->
+                    <div
+                        class="reveal relative bg-white/80 backdrop-blur-md rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1.5 transition-all duration-300 group z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                                    <i class="fa-solid fa-clipboard-list"></i>
+                                </div>
+                                <span
+                                    class="text-4xl font-black text-slate-200 group-hover:text-blue-500/20 transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Tell Us Your Requirement
+                            </h3>
+                            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                                Share your budget, location preferences, property type, and long-term goals with our
+                                expert team.
+                            </p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-blue-600">
+                            Step 1 of 4 <i
+                                class="fa-solid fa-arrow-right ml-1.5 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div
+                        class="reveal relative bg-white/80 backdrop-blur-md rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1.5 transition-all duration-300 group z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                                    <i class="fa-solid fa-[#fa-magnifying-glass-location] fa-compass"></i>
+                                </div>
+                                <span
+                                    class="text-4xl font-black text-slate-200 group-hover:text-blue-500/20 transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Explore Suitable Options
+                            </h3>
+                            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                                We curate and present hand-picked, verified listings tailored specifically to your
+                                needs.
+                            </p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-blue-600">
+                            Step 2 of 4 <i
+                                class="fa-solid fa-arrow-right ml-1.5 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div
+                        class="reveal relative bg-white/80 backdrop-blur-md rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1.5 transition-all duration-300 group z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <span
+                                    class="text-4xl font-black text-slate-200 group-hover:text-indigo-500/20 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                Compare & Evaluate
+                            </h3>
+                            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                                Deep dive into transparent pricing, location amenities, and future appreciation
+                                potential.
+                            </p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-indigo-600">
+                            Step 3 of 4 <i
+                                class="fa-solid fa-arrow-right ml-1.5 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div
+                        class="reveal relative bg-white/80 backdrop-blur-md rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1.5 transition-all duration-300 group z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                                    <i class="fa-solid fa-handshake-angle"></i>
+                                </div>
+                                <span
+                                    class="text-4xl font-black text-slate-200 group-hover:text-indigo-500/20 transition-colors">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                Move Forward Confidently
+                            </h3>
+                            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                                Get end-to-end guidance through legal verification, negotiation, and final paperwork.
+                            </p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-indigo-600">
+                            Step 4 of 4 <i
+                                class="fa-solid fa-arrow-right ml-1.5 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">
+
+            <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+
+                <div class="text-center reveal">
+
+                    <span class="text-indigo-600 font-bold text-sm uppercase tracking-widest">
+                        FAQ
+                    </span>
+
+                    <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl
+                        font-black text-slate-900">
+
+                        Frequently Asked Questions
+
+                    </h2>
+
+                    <p class="mt-4 text-slate-600">
+                        Common questions about our real estate services in Indore.
+                    </p>
+
+                </div>
+
+
+                <div class="mt-12 space-y-4">
+
+                    <details class="group bg-white border border-slate-200 rounded-2xl p-5">
+
+                        <summary class="cursor-pointer list-none flex items-center
+                            justify-between gap-4 font-bold text-slate-900">
+
+                            What real estate services does Mishra Property provide?
+
+                            <span class="w-8 h-8 rounded-full bg-slate-100
+                                flex items-center justify-center shrink-0
+                                group-open:rotate-45 transition-transform">
+
+                                <i class="fa-solid fa-plus text-sm"></i>
+
+                            </span>
+
+                        </summary>
+
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                            We provide property buying, selling, rental and
+                            leasing assistance, property valuation,
+                            home loan guidance and real estate investment
+                            consulting.
+                        </p>
+
+                    </details>
+
+
+                    <details class="group bg-white border border-slate-200 rounded-2xl p-5">
+
+                        <summary class="cursor-pointer list-none flex items-center
+                            justify-between gap-4 font-bold text-slate-900">
+
+                            Can you help me find a property in Indore?
+
+                            <span class="w-8 h-8 rounded-full bg-slate-100
+                                flex items-center justify-center shrink-0
+                                group-open:rotate-45 transition-transform">
+
+                                <i class="fa-solid fa-plus text-sm"></i>
+
+                            </span>
+
+                        </summary>
+
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                            Yes. You can share your preferred location,
+                            property type, budget and requirements with
+                            our team, and we can help you explore suitable
+                            options.
+                        </p>
+
+                    </details>
+
+
+                    <details class="group bg-white border border-slate-200 rounded-2xl p-5">
+
+                        <summary class="cursor-pointer list-none flex items-center
+                            justify-between gap-4 font-bold text-slate-900">
+
+                            Do you help property owners sell their property?
+
+                            <span class="w-8 h-8 rounded-full bg-slate-100
+                                flex items-center justify-center shrink-0
+                                group-open:rotate-45 transition-transform">
+
+                                <i class="fa-solid fa-plus text-sm"></i>
+
+                            </span>
+
+                        </summary>
+
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                            Yes. We assist property owners with property
+                            assessment, buyer coordination, marketing
+                            support and negotiation assistance.
+                        </p>
+
+                    </details>
+
+
+                    <details class="group bg-white border border-slate-200 rounded-2xl p-5">
+
+                        <summary class="cursor-pointer list-none flex items-center
+                            justify-between gap-4 font-bold text-slate-900">
+
+                            Do you offer commercial property services?
+
+                            <span class="w-8 h-8 rounded-full bg-slate-100
+                                flex items-center justify-center shrink-0
+                                group-open:rotate-45 transition-transform">
+
+                                <i class="fa-solid fa-plus text-sm"></i>
+
+                            </span>
+
+                        </summary>
+
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                            Yes. Our property services can include commercial
+                            requirements such as offices, shops, retail spaces
+                            and commercial plots.
+                        </p>
+
+                    </details>
+
+
+                    <details class="group bg-white border border-slate-200 rounded-2xl p-5">
+
+                        <summary class="cursor-pointer list-none flex items-center
+                            justify-between gap-4 font-bold text-slate-900">
+
+                            How can I contact Mishra Property?
+
+                            <span class="w-8 h-8 rounded-full bg-slate-100
+                                flex items-center justify-center shrink-0
+                                group-open:rotate-45 transition-transform">
+
+                                <i class="fa-solid fa-plus text-sm"></i>
+
+                            </span>
+
+                        </summary>
+
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                            You can call us, contact us through WhatsApp,
+                            or use the contact page to discuss your
+                            property requirement.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- FAQ SCHEMA -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What real estate services does Mishra Property provide?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Mishra Property provides property buying, selling, rental and leasing assistance, property valuation, home loan guidance and real estate investment consulting."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you help me find a property in Indore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Clients can share their preferred location, property type, budget and requirements to explore suitable property options."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you help property owners sell their property?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Mishra Property provides property assessment, buyer coordination, marketing support and negotiation assistance."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer commercial property services?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Commercial property requirements can include offices, shops, retail spaces and commercial plots."
+                    }
+                }
+            ]
+        }
+        </script>
+
+        <!-- Refined Professional CTA Section -->
+        <section class="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-y border-slate-200/80">
+
+            <!-- Subtle Background Gradients -->
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-100/70 via-slate-50 to-white">
+            </div>
+
+            <!-- Soft Decorative Glowing Orbs -->
+            <div
+                class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-200/40 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <!-- Main Container -->
+            <div class="relative max-w-4xl mx-auto px-6 text-center">
+
+                <!-- Floating Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 shadow-sm text-xs sm:text-sm font-semibold text-indigo-700 mb-8 transition-transform hover:scale-105">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                    <i class="fa-solid fa-house-circle-check text-indigo-600"></i>
+                    <span>Let's Find Your Dream Property</span>
+                </div>
+
+                <!-- Headline -->
+                <h2
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                    Ready to Make Your <br class="hidden sm:inline" />
+                    <span
+                        class="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-800 bg-clip-text text-transparent">
+                        Next Property Move?
+                    </span>
+                </h2>
+
+                <!-- Subheading -->
+                <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+                    Tell us what you are looking for. Our dedicated real estate advisors are ready to guide you every
+                    step of the way.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+
+                    <!-- Primary Action -->
+                    <a href="contact.html"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-indigo-600 text-white font-semibold text-base shadow-lg shadow-indigo-600/25 hover:bg-indigo-700 hover:shadow-xl hover:shadow-indigo-600/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group">
+                        <span>Book a Site Visit</span>
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+
+                    <!-- Secondary Action -->
+                    <a href="tel:+917987380096"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-white hover:bg-slate-100/80 border border-slate-300/80 text-slate-800 font-semibold text-base shadow-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid fa-phone text-sm text-indigo-600"></i>
+                        <span>+91 7987380096</span>
+                    </a>
+
+                </div>
+
+                <!-- Trust Signals / Subtext -->
+                <div
+                    class="mt-12 pt-8 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-500 font-medium">
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> Free Consultation
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> Verified Properties
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> No Hidden Fees
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 pt-14 pb-7 text-slate-300">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                gap-9 pb-10 border-b border-slate-800">
+
+                <!-- BRAND -->
+
+                <div>
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-xl
+                            bg-gradient-to-br from-indigo-600 to-violet-500
+                            flex items-center justify-center text-white">
+
+                            <i class="fa-solid fa-house"></i>
+
+                        </div>
+
+                        <span class="text-xl font-black text-white">
+                            Mishra<span class="text-indigo-400">
+                                Property
+                            </span>
+                        </span>
+
+                    </div>
+
+                    <p class="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">
+
+                        Professional real estate services in Indore
+                        for buying, selling, renting and investing
+                        in property.
+
+                    </p>
+
+                    <div class="flex gap-3 mt-5">
+
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-slate-900
+                            flex items-center justify-center
+                            hover:bg-indigo-600 hover:text-white transition">
+
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+
+                        </a>
+
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-900
+                            flex items-center justify-center
+                            hover:bg-indigo-600 hover:text-white transition">
+
+                            <i class="fa-brands fa-instagram text-sm"></i>
+
+                        </a>
+
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-slate-900
+                            flex items-center justify-center
+                            hover:bg-indigo-600 hover:text-white transition">
+
+                            <i class="fa-brands fa-youtube text-sm"></i>
+
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-900
+                            flex items-center justify-center
+                            hover:bg-indigo-600 hover:text-white transition">
+
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div>
+
+                    <h3 class="font-bold text-white mb-5">
+                        Quick Links
+                    </h3>
+
+                    <ul class="space-y-3 text-sm">
+
+                        <li>
+                            <a href="index.html" class="hover:text-indigo-400 transition">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="hover:text-indigo-400 transition">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="properties.html" class="hover:text-indigo-400 transition">
+                                Properties
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projects.html" class="hover:text-indigo-400 transition">
+                                Projects
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="gallery.html" class="hover:text-indigo-400 transition">
+                                Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="hover:text-indigo-400 transition">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICES -->
+
+                <div>
+
+                    <h3 class="font-bold text-white mb-5">
+                        Our Services
+                    </h3>
+
+                    <ul class="space-y-3 text-sm">
+
+                        <li>
+                            <a href="#buy-property" class="hover:text-indigo-400 transition">
+                                Buy Property
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#sell-property" class="hover:text-indigo-400 transition">
+                                Sell Property
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#rent-property" class="hover:text-indigo-400 transition">
+                                Rent Property
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#property-valuation" class="hover:text-indigo-400 transition">
+                                Property Valuation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#home-loan" class="hover:text-indigo-400 transition">
+                                Home Loan Assistance
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#investment" class="hover:text-indigo-400 transition">
+                                Investment Consulting
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div>
+
+                    <h3 class="font-bold text-white mb-5">
+                        Get in Touch
+                    </h3>
+
+                    <ul class="space-y-4 text-sm">
+
+                        <li class="flex gap-3">
+
+                            <i class="fa-solid fa-location-dot
+                            text-indigo-400 mt-1"></i>
+
+                            <span>
+                                Vijay Nagar, Indore,
+                                Madhya Pradesh
+                            </span>
+
+                        </li>
+
+                        <li class="flex gap-3">
+
+                            <i class="fa-solid fa-phone
+                            text-indigo-400 mt-1"></i>
+
+                            <a href="tel:+917987380096" class="hover:text-indigo-400">
+                                +91 7987380096
+                            </a>
+
+                        </li>
+
+                        <li class="flex gap-3">
+
+                            <i class="fa-regular fa-envelope
+                            text-indigo-400 mt-1"></i>
+
+                            <a href="mailto:info@mishraproperty.com" class="hover:text-indigo-400">
+                                info@mishraproperty.com
+                            </a>
+
+                        </li>
+
+                        <li class="flex gap-3">
+
+                            <i class="fa-regular fa-clock
+                            text-indigo-400 mt-1"></i>
+
+                            Mon–Sat, 9 AM – 7 PM
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="pt-6 flex flex-col sm:flex-row
+                justify-between items-center gap-4
+                text-xs sm:text-sm text-slate-500">
+
+                <p>
+                    © <span id="current-year"></span>
+                    Mishra Property. All rights reserved.
+                </p>
+
+                <div class="flex gap-5">
+
+                    <a href="#" class="hover:text-indigo-400 transition">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="hover:text-indigo-400 transition">
+                        Terms of Service
+                    </a>
+
+                    <a href="#" class="hover:text-indigo-400 transition">
+                        Sitemap
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </footer>
+
+
+    <!--JAVASCRIPT-->
+    <script>
+
+        /*  MOBILE MENU  */
+
+        const mobileMenuBtn =
+            document.getElementById("mobile-menu-btn");
+
+        const mobileDrawer =
+            document.getElementById("mobile-drawer");
+
+        const drawerBackdrop =
+            document.getElementById("drawer-backdrop");
+
+        const closeDrawerBtn =
+            document.getElementById("close-drawer-btn");
+
+        function openDrawer() {
+
+            mobileDrawer.classList.remove("translate-x-full");
+
+            drawerBackdrop.classList.remove(
+                "opacity-0",
+                "pointer-events-none"
+            );
+
+            document.body.classList.add("overflow-hidden");
+
+        }
+
+        function closeDrawer() {
+
+            mobileDrawer.classList.add("translate-x-full");
+
+            drawerBackdrop.classList.add(
+                "opacity-0",
+                "pointer-events-none"
+            );
+
+            document.body.classList.remove("overflow-hidden");
+
+        }
+
+        mobileMenuBtn?.addEventListener(
+            "click",
+            openDrawer
+        );
+
+        closeDrawerBtn?.addEventListener(
+            "click",
+            closeDrawer
+        );
+
+        drawerBackdrop?.addEventListener(
+            "click",
+            closeDrawer
+        );
+
+        document
+            .querySelectorAll("#mobile-drawer a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeDrawer
+                );
+
+            });
+
+
+        /*  HEADER HIDE / SHOW ON SCROLL
+        ====================================================== */
+
+        const header =
+            document.getElementById("main-header");
+
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                const currentScrollY =
+                    window.scrollY;
+
+                if (
+                    currentScrollY > 150 &&
+                    currentScrollY > lastScrollY
+                ) {
+
+                    header.classList.add(
+                        "header-hidden"
+                    );
+
+                } else {
+
+                    header.classList.remove(
+                        "header-hidden"
+                    );
+
+                }
+
+                lastScrollY = currentScrollY;
+
+            },
+            { passive: true }
+        );
+
+
+        /*  REVEAL ANIMATION
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+
+            const observer =
+                new IntersectionObserver(
+                    entries => {
+
+                        entries.forEach(entry => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add("show");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+            revealElements.forEach(
+                element =>
+                    observer.observe(element)
+            );
+
+        } else {
+
+            revealElements.forEach(
+                element =>
+                    element.classList.add("show")
+            );
+
+        }
+
+
+        /*  YEAR
+        ====================================================== */
+
+        document.getElementById(
+            "current-year"
+        ).textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+
+</html>

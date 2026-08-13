@@ -402,298 +402,426 @@
         </div>
     </aside>
 
-    <!-- ================= SEARCH RESULTS POPUP MODAL ================= -->
-    <!--
-      User searches a location (e.g. "Vijay Nagar", "Pithampur") in the hero
-      search bar -> matching projects render as cards INSIDE this popup box:
-      image, name, location, rating, availability, visiting time, site-visit
-      contact person, and a "View More Details" button that redirects to
-      that project's own detail page.
-
-      IMPORTANT: the PROJECTS array (in the <script> at the bottom of the
-      page) currently has SAMPLE / PLACEHOLDER data as an example of the
-      structure. Replace it with your real project data (real images, real
-      locations, real contact names, real detail-page URLs).
-    -->
-    <div id="results-backdrop"
-        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[70] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
-        aria-hidden="true"></div>
-
-    <div id="results-modal"
-        class="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6 opacity-0 invisible pointer-events-none scale-95 transition-all duration-300 ease-out"
-        role="dialog" aria-modal="true" aria-labelledby="results-modal-title" aria-hidden="true">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[85vh] flex flex-col overflow-hidden">
-
-            <!-- MODAL HEADER -->
-            <div class="flex items-start justify-between gap-3 p-5 sm:p-6 border-b border-slate-100 shrink-0">
-                <div>
-                    <h2 id="results-modal-title" class="text-xl sm:text-2xl font-bold text-slate-900">
-                        Our Projects <span id="results-location-label" class="text-blue-600"></span>
-                    </h2>
-                    <span id="results-count" class="text-sm font-medium text-slate-500"></span>
-                </div>
-                <button id="results-modal-close" type="button"
-                    class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors shrink-0"
-                    aria-label="Close results">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- MODAL BODY: SCROLLABLE CARD GRID -->
-            <div class="p-5 sm:p-6 overflow-y-auto flex-1">
-                <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-                <div id="no-results" class="hidden text-center py-14 bg-slate-50 rounded-2xl border border-slate-100">
-                    <i class="fa-solid fa-magnifying-glass-location text-3xl text-slate-300 mb-3"></i>
-                    <p class="text-slate-500 font-medium">No projects found for this search.</p>
-                    <p class="text-slate-400 text-sm mt-1">Try a different location, like "Vijay Nagar" or
-                        "Pithampur".</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <main class="pt-20 px-1">
-        <!-- HERO SECTION -->
-        <section class="relative w-full min-h-screen overflow-hidden bg-white font-sans">
 
-            <!-- ================= FULL-SCREEN BACKGROUND SLIDER ================= -->
-            <div class="absolute inset-0 z-0">
-                <!-- SLIDE 1 -->
-                <div class="hero-slide active">
-                    <img src="assets/image/Gemini_Generated_Image_aq3bzyaq3bzyaq3b.png"
-                        alt="Modern villa exterior at dusk" class="hero-image" />
-                </div>
+        <!-- FEATURED PROJECTS SECTION START -->
+        <section
+            class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 via-blue-50/20 to-slate-100 text-slate-800 relative overflow-hidden font-sans">
 
-                <!-- SLIDE 2 -->
-                <div class="hero-slide">
-                    <img src="assets/image/bgimage4.png" alt="Luxury apartment building" class="hero-image" />
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="hero-slide">
-                    <img src="assets/image/bgimage2.png" alt="Residential township aerial view" class="hero-image" />
-                </div>
-
-                <!-- SLIDE 4 -->
-                <div class="hero-slide">
-                    <img src="assets/image/unnamed.webp" alt="Premium villa plots entrance" class="hero-image" />
-                </div>
-
-                <!-- SOFT OVERALL LIGHTENING OVERLAY -->
+            <!-- Subtle Gradient Background Accents -->
+            <div
+                class="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-[#155DFC]/10 via-blue-400/10 to-transparent blur-3xl rounded-full pointer-events-none">
             </div>
 
-            <!-- ================= MAIN CONTENT CONTAINER ================= -->
-            <div
-                class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 pb-16 min-h-screen flex flex-col justify-between">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                <!-- TOP & HERO CONTENT GRID -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-6">
-
-                    <!-- LEFT COLUMN: TEXT CONTENT -->
-                    <div class="lg:col-span-6 xl:col-span-5 space-y-6">
-
-                        <!-- BADGE -->
-                        <div
-                            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50/80 backdrop-blur-md shadow-sm">
-                            <i class="fa-solid fa-house text-blue-600 text-xs"></i>
-                            <span class="text-xs sm:text-sm font-semibold text-blue-800 tracking-wide">
-                                Trusted Real Estate Company Since 2015
-                            </span>
-                        </div>
-
-                        <!-- HEADING -->
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                            Find Your <br />
-                            <span class="text-blue-600">Dream Property</span> <br />
-                            in Indore
-                        </h1>
-
-                        <!-- SUB-HEADING & TYPING TEXT -->
-                        <div class="text-base sm:text-lg font-medium text-slate-600">
-                            Your Trusted Partner For:
-                            <span id="typing-text" class="font-bold text-blue-600 typing-cursor pl-1"></span>
-                        </div>
-
-                        <!-- DESCRIPTION -->
-                        <p class="text-base text-slate-500 max-w-xl leading-relaxed border-l-4 border-blue-600 pl-4">
-                            Helping families and investors discover premium homes, luxury villas, commercial spaces,
-                            apartments, and residential plots across Indore with complete transparency, verified
-                            properties,
-                            and expert real estate guidance.
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                    <div>
+                        <span
+                            class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full bg-[#155DFC]/10 border border-[#155DFC]/20 text-[#155DFC] text-xs font-bold tracking-widest uppercase mb-3 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-[#155DFC] animate-pulse"></span>
+                            Gracelands Premium Projects
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+                            Our Featured Projects
+                        </h2>
+                        <p class="mt-3 text-slate-600 text-base sm:text-lg max-w-2xl">
+                            Prime residential plots with 10% down payment, 0% interest EMI options & 100% legal clear
+                            titles.
                         </p>
-
-                        <!-- CALL TO ACTION BUTTONS -->
-                        <div class="flex flex-wrap items-center gap-4 pt-2">
-                            <!-- PRIMARY BUTTON -->
-                            <a href="properties.html"
-                                class="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-300">
-                                Explore Properties
-                                <i class="fa-solid fa-arrow-right text-sm"></i>
-                            </a>
-
-                            <!-- SECONDARY BUTTON -->
-                            <a href="contact.html"
-                                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-700 bg-white/80 hover:bg-white border border-slate-200/80 backdrop-blur-md shadow-sm transition-all duration-300">
-                                How It Works
-                                <i class="fa-regular fa-circle-play text-slate-500"></i>
-                            </a>
-                        </div>
-
-                        <!-- CLIENT AVATARS & TRUST BADGE -->
-                        <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
-                            <div class="flex -space-x-3">
-                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
-                                    alt="Client">
-                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"
-                                    alt="Client">
-                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
-                                    alt="Client">
-                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100"
-                                    alt="Client">
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-bold text-slate-800">Trusted by 25,000+ happy clients</p>
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- RIGHT COLUMN: FLOATING VILLA CARD -->
-
-
+                    <!-- Navigation Arrows -->
+                    <div class="flex items-center gap-3 self-end">
+                        <button onclick="scrollCards('left')"
+                            class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 hover:bg-[#155DFC] hover:text-white hover:border-[#155DFC] shadow-sm transition-all duration-300 group">
+                            <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="scrollCards('right')"
+                            class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 hover:bg-[#155DFC] hover:text-white hover:border-[#155DFC] shadow-sm transition-all duration-300 group">
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- ================= BOTTOM SEARCH BAR ================= -->
-                <div class="mt-12 bg-white/90 backdrop-blur-xl p-4 md:p-5 rounded-2xl shadow-xl border border-white/80">
-                    <form id="property-search-form"
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 items-center">
-                        <!-- Location Search -->
-                        <div
-                            class="lg:col-span-2 space-y-1 border-b sm:border-b-0 sm:border-r border-slate-200 pb-2 sm:pb-0 sm:pr-3">
-                            <label for="search-location"
-                                class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Search
-                                Location</label>
-                            <div class="relative flex items-center">
-                                <input id="search-location" type="text" placeholder="City, Neighborhood..."
-                                    class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none placeholder-slate-400">
-                                <i class="fa-solid fa-location-dot text-slate-400 text-sm"></i>
-                            </div>
-                        </div>
+                <!-- Filter & Search Bar -->
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
 
-                        <!-- Property Type -->
-                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
-                            <label for="search-type"
-                                class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Property
-                                Type</label>
-                            <select id="search-type"
-                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
-                                <option>Any Type</option>
-                                <option>Luxury Villa</option>
-                                <option>Apartment</option>
-                                <option>Plot</option>
-                            </select>
-                        </div>
+                    <!-- Filters -->
+                    <div class="flex flex-wrap gap-2 w-full lg:w-auto" id="projectFiltersRow">
+                        <button onclick="filterRowProjects('all')"
+                            class="row-filter-btn active-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-[#155DFC] to-blue-700 text-white shadow-md shadow-[#155DFC]/20">
+                            All Projects
+                        </button>
+                        <button onclick="filterRowProjects('new')"
+                            class="row-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 shadow-sm">
+                            New Launch 🔥
+                        </button>
+                        <button onclick="filterRowProjects('ab-road')"
+                            class="row-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 shadow-sm">
+                            AB Road Mangliya 📍
+                        </button>
+                    </div>
 
-                        <!-- Price Range -->
-                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
-                            <label for="search-price"
-                                class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Price
-                                Range</label>
-                            <select id="search-price"
-                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
-                                <option>₹50L - ₹5Cr+</option>
-                                <option>₹20L - ₹50L</option>
-                                <option>₹50L - ₹1Cr</option>
-                            </select>
-                        </div>
+                    <!-- Live Search Box -->
+                    <div class="relative w-full lg:w-80">
+                        <input type="text" id="projectSearchRow" placeholder="Search project name..."
+                            onkeyup="searchRowProjects()"
+                            class="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20 transition-all shadow-sm placeholder:text-slate-400">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
 
-                        <!-- Beds & Baths -->
-                        <div class="space-y-1 border-b sm:border-b-0 lg:border-r border-slate-200 pb-2 sm:pb-0 lg:pr-3">
-                            <label for="search-beds"
-                                class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Beds /
-                                Baths</label>
-                            <select id="search-beds"
-                                class="w-full bg-transparent text-slate-800 font-medium text-sm focus:outline-none cursor-pointer">
-                                <option>Any</option>
-                                <option>2+ BHK</option>
-                                <option>3+ BHK</option>
-                            </select>
-                        </div>
+                <!-- Single Row Scrollable Cards Container -->
+                <div id="cardsRowContainer"
+                    class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-1 no-scrollbar min-h-[620px]"
+                    style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Rich Cards Dynamic Render via JS -->
+                </div>
 
-                        <!-- Submit Button -->
-                        <div class="lg:col-span-1">
-                            <button id="search-submit-btn" type="submit"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl shadow-md shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
-                                <span>Search</span>
-                                <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                            </button>
+            </div>
+
+            <!-- Detailed Modal -->
+            <div id="rowInquiryModal"
+                class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-md hidden transition-opacity duration-300 opacity-0">
+                <div
+                    class="bg-white border border-slate-100 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+                    <button onclick="closeRowModal()"
+                        class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 p-1 text-xl font-bold">
+                        ✕
+                    </button>
+
+                    <div class="mb-6">
+                        <span
+                            class="text-[11px] font-bold uppercase tracking-widest text-[#155DFC] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">Free
+                            Site Visit & Booking</span>
+                        <h3 class="text-2xl font-black text-slate-900 mt-2" id="modalRowProjectTitle">Project Name</h3>
+                        <p class="text-xs text-slate-500 mt-1">Book your plot with just 10% Down Payment & 0% Interest
+                            EMI.</p>
+                    </div>
+
+                    <form onsubmit="handleRowInquirySubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your
+                                Name</label>
+                            <input type="text" required placeholder="Full Name"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20">
                         </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Phone
+                                Number</label>
+                            <input type="tel" required placeholder="+91 79873 80096"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-[#155DFC] focus:ring-2 focus:ring-[#155DFC]/20">
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-[#155DFC] to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-[#155DFC]/25 mt-2">
+                            Request Free Site Visit
+                        </button>
                     </form>
                 </div>
+            </div>
+
+            <!-- JavaScript Logic -->
+            <script>
+                const rowProjectsData = [
+                    {
+                        id: 1,
+                        name: "Highway Blossom",
+                        rate: "₹3,300",
+                        location: "AB Road, Mangliya",
+                        badge: "Premium Layout",
+                        category: "ab-road",
+                        plotSizes: ["600", "800", "1000", "1200+"],
+                        highlights: ["10% Down Payment", "0% Interest EMI", "100% Legal & Clear Title"],
+                        image: "/assets/image/blooms city.png"
+                    },
+                    {
+                        id: 2,
+                        name: "Highway Serene City 2",
+                        rate: "₹3,400",
+                        location: "AB Road, Mangliya",
+                        badge: "Popular Project",
+                        category: "ab-road",
+                        plotSizes: ["600", "800", "1000", "1200+"],
+                        highlights: ["Wide Roads & Plantation", "0% Interest EMI", "Gated Security"],
+                        image: "/assets/image/HighwaySereneCity2.png"
+                    },
+                    {
+                        id: 3,
+                        name: "Highway Oasis",
+                        rate: "₹3,775",
+                        location: "Prime Location",
+                        badge: "Luxury Township",
+                        category: "premium",
+                        plotSizes: ["800", "1000", "1200", "1500+"],
+                        highlights: ["Green Environment", "Easy 12-24 Mth Pay", "Clear Legal Title"],
+                        image: "/assets/image/HighwayOasisimage.png"
+                    },
+                    {
+                        id: 4,
+                        name: "Highway Landmark",
+                        rate: "₹2,975",
+                        location: "Prime Location",
+                        badge: "Best Value",
+                        category: "budget",
+                        plotSizes: ["600", "800", "1000+"],
+                        highlights: ["High Growth Area", "10% Booking Amount", "Water & Electricity"],
+                        image: "/assets/image/86fe30d3-5c86-45b6-9f45-d5f43159bfb8.png"
+                    },
+                    {
+                        id: 5,
+                        name: "Highway Avenue",
+                        rate: "₹4,400",
+                        location: "Prime Location",
+                        badge: "Grand Township",
+                        category: "premium",
+                        plotSizes: ["1000", "1200", "1500", "2000+"],
+                        highlights: ["Near Schools/Hospitals", "Gated Campus", "Flexible EMI Plan"],
+                        image: "/assets/image/Highway Avenue.png"
+                    },
+                    {
+                        id: 6,
+                        name: "Highway Trident",
+                        rate: "₹2,650",
+                        location: "New Launching Colony",
+                        badge: "New Launch 🔥",
+                        category: "new",
+                        plotSizes: ["600", "800", "1000", "1200+"],
+                        highlights: ["Introductory Rate", "0% Interest EMI", "10% Down Payment"],
+                        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+                    },
+                    {
+                        id: 7,
+                        name: "Highway Season",
+                        rate: "₹2,699",
+                        location: "Prime Location",
+                        badge: "Hot Deal",
+                        category: "budget",
+                        plotSizes: ["600", "800", "1000+"],
+                        highlights: ["100% Clear Title", "Direct Connectivity", "Water & Drainage"],
+                        image: "/assets/image/HighwaySeasons.png"
+                    },
+                    {
+                        id: 8,
+                        name: "Highway Aura",
+                        rate: "₹3,400",
+                        location: "Prime Location",
+                        badge: "Exclusive",
+                        category: "premium",
+                        plotSizes: ["600", "850", "1000+"],
+                        highlights: ["Safe Gated Community", "Planned Development", "0% Interest EMI"],
+                        image: "/assets/image/72160110-151f-4c11-97dc-abf1255d7d34.jpg"
+                    },
 
 
+                    {
+                        id: 9,
+                        name: "Highway Submmit",
+                        rate: "₹3,400",
+                        location: "Prime Location",
+                        badge: "Exclusive",
+                        category: "premium",
+                        plotSizes: ["800", "1000", "1200"],
+                        highlights: ["Safe Gated Community", "Planned Development", "0% Interest EMI"],
+                        image: "/assets/image/Submmitlimage.jpg"
+                    }
+                ];
+
+                let currentFilterState = 'all';
+
+                function renderRowCards(items) {
+                    const container = document.getElementById('cardsRowContainer');
+                    container.innerHTML = '';
+
+                    if (items.length === 0) {
+                        container.innerHTML = `
+          <div class="w-full flex items-center justify-center py-20 text-slate-400 text-base font-semibold">
+            No projects matched your criteria.
+          </div>
+        `;
+                        return;
+                    }
+
+                    items.forEach(p => {
+                        const card = document.createElement('div');
+                        // Extra width and height for rich presentation
+                        card.className = `snap-start flex-none w-[340px] sm:w-[410px] bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:border-[#155DFC] transition-all duration-300 flex flex-col justify-between group`;
+
+                        // Render plot size pills
+                        const sizesHTML = p.plotSizes.map(s =>
+                            `<span class="px-2.5 py-1 bg-slate-100 border border-slate-200 text-slate-800 rounded-lg text-xs font-bold">${s} <span class="text-[10px] text-slate-500 font-normal">sq.ft</span></span>`
+                        ).join('');
+
+                        // Render feature checkmarks
+                        const highlightsHTML = p.highlights.map(h =>
+                            `<li class="flex items-center text-xs text-slate-600 font-medium gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#155DFC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            ${h}
+          </li>`
+                        ).join('');
+
+                        card.innerHTML = `
+          <div>
+            <!-- Top Section: Image Box -->
+            <div class="relative h-60 sm:h-64 overflow-hidden bg-slate-100">
+              <img 
+                src="${p.image}" 
+                alt="${p.name}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <!-- Badge -->
+              <span class="absolute top-4 left-4 bg-[#155DFC] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-md">
+                ${p.badge}
+              </span>
+
+              <!-- Location Tag -->
+              <div class="absolute bottom-3 left-4 flex items-center text-xs text-white font-medium bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
+                <svg class="w-3.5 h-3.5 mr-1 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                </svg>
+                <span>${p.location}</span>
+              </div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="p-6">
+              
+              <!-- Title & Rate Box -->
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <div>
+                  <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#155DFC] transition-colors leading-tight">
+                    ${p.name}
+                  </h3>
+                  <span class="text-[11px] font-bold text-emerald-600 tracking-wide uppercase">10% Down Payment Booking</span>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-[#155DFC]/30 p-2.5 rounded-xl text-right shrink-0">
+                  <span class="block text-[9px] font-extrabold uppercase text-slate-400 tracking-wider">Starting Rate</span>
+                  <span class="text-lg font-black text-[#155DFC]">${p.rate}<span class="text-xs text-slate-500 font-semibold">/sq.ft</span></span>
+                </div>
+              </div>
+
+              <!-- Available Plot Sizes -->
+              <div class="mb-4">
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Available Plot Sizes</span>
+                <div class="flex flex-wrap gap-1.5">
+                  ${sizesHTML}
+                </div>
+              </div>
+
+              <!-- Key Highlights -->
+              <div class="pt-3 border-t border-slate-100">
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Project Highlights</span>
+                <ul class="space-y-1.5">
+                  ${highlightsHTML}
+                </ul>
+              </div>
 
             </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="px-6 pb-6 pt-0">
+            <button 
+              onclick="openRowModal('${p.name}')" 
+              class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#155DFC] to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-md shadow-[#155DFC]/20 hover:shadow-lg hover:shadow-[#155DFC]/30 flex items-center justify-center gap-2 group/btn"
+            >
+              <span>Book Site Visit / Details</span>
+              <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        `;
+
+                        container.appendChild(card);
+                    });
+                }
+
+                function scrollCards(direction) {
+                    const container = document.getElementById('cardsRowContainer');
+                    const scrollAmount = 420;
+                    container.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+                }
+
+                function filterRowProjects(type) {
+                    currentFilterState = type;
+
+                    document.querySelectorAll('.row-filter-btn').forEach(btn => {
+                        btn.classList.remove('bg-gradient-to-r', 'from-[#155DFC]', 'to-blue-700', 'text-white', 'shadow-md', 'shadow-[#155DFC]/20');
+                        btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    });
+
+                    event.currentTarget.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    event.currentTarget.classList.add('bg-gradient-to-r', 'from-[#155DFC]', 'to-blue-700', 'text-white', 'shadow-md', 'shadow-[#155DFC]/20');
+
+                    applyRowFilters();
+                }
+
+                function searchRowProjects() {
+                    applyRowFilters();
+                }
+
+                function applyRowFilters() {
+                    const query = document.getElementById('projectSearchRow').value.toLowerCase();
+
+                    const filtered = rowProjectsData.filter(p => {
+                        const matchesCategory =
+                            currentFilterState === 'all' ||
+                            p.category.includes(currentFilterState);
+
+                        const matchesQuery =
+                            p.name.toLowerCase().includes(query) ||
+                            p.location.toLowerCase().includes(query) ||
+                            p.rate.toLowerCase().includes(query);
+
+                        return matchesCategory && matchesQuery;
+                    });
+
+                    renderRowCards(filtered);
+                }
+
+                function openRowModal(projectName) {
+                    document.getElementById('modalRowProjectTitle').innerText = projectName;
+                    const modal = document.getElementById('rowInquiryModal');
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                }
+
+                function closeRowModal() {
+                    const modal = document.getElementById('rowInquiryModal');
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                }
+
+                function handleRowInquirySubmit(e) {
+                    e.preventDefault();
+                    alert('Thank you! Our agent will contact you for a free site visit & full details.');
+                    closeRowModal();
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    renderRowCards(rowProjectsData);
+                });
+            </script>
+
         </section>
+        <!-- FEATURED PROJECTS SECTION END -->
+        <section class=" ">
 
-        <!-- ================= BOTTOM FEATURES / BADGES BAR ================= -->
-        <div
-            class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-white/60 shadow-lg">
-
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Verified Listings</h5>
-                    <p class="text-xs text-slate-500">All properties are checked and verified</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-tags"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Best Price Guarantee</h5>
-                    <p class="text-xs text-slate-500">Get the best deals available</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Expert Support</h5>
-                    <p class="text-xs text-slate-500">Our agents are here to help you</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
-                <div>
-                    <h5 class="font-bold text-slate-900 text-sm">Easy & Secure</h5>
-                    <p class="text-xs text-slate-500">Smooth process from search to purchase</p>
-                </div>
-            </div>
-
-        </div>
-
+        </section>
     </main>
 
     <!-- JAVASCRIPT LOGIC -->
